@@ -97,3 +97,9 @@
     - [x] GitHub: https://github.com/kodecocodes/comb-materials
 - [x] Practical Combine
     - [x] Book: https://donnywals.gumroad.com/l/practical-combine
+- [x] WWDC
+    - [x] Introducing Combine: https://www.wwdcnotes.com/notes/wwdc19/722/
+    - [x] Combine in Practice: https://www.wwdcnotes.com/notes/wwdc19/721/
+    - [x] Advances in Networking, Part 1: https://www.wwdcnotes.com/notes/wwdc19/712/
+    - [x] Advances in Networking, Part 2: https://www.wwdcnotes.com/notes/wwdc19/713/
+    - [x] GitHub: https://github.com/WWDCNotes/Content 
