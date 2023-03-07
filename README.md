@@ -95,3 +95,5 @@
 - [x] Combine: Asynchronous Programming with Swift
     - [x] Book: https://www.kodeco.com/books/combine-asynchronous-programming-with-swift
     - [x] GitHub: https://github.com/kodecocodes/comb-materials
+- [x] Practical Combine
+    - [x] Book: https://donnywals.gumroad.com/l/practical-combine
