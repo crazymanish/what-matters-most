@@ -87,3 +87,11 @@
 - [ ] Complete app
     - [ ] Build app
     - [ ] Unit testing
+
+--------------------------------------------
+
+  **Section5: Books**
+
+- [x] Combine: Asynchronous Programming with Swift
+    - [x] Book: https://www.kodeco.com/books/combine-asynchronous-programming-with-swift
+    - [x] GitHub: https://github.com/kodecocodes/comb-materials
