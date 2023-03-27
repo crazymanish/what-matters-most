@@ -19,7 +19,7 @@
 **Section1: Introduction**
 
 - [ ] Publisher
-    - [ ] Read about publisher
+    - [x] Read about publisher
     - [ ] Built-in publishers
     - [ ] Custom publisher
     - [ ] Practices
