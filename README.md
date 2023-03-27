@@ -19,7 +19,7 @@
 **Section1: Introduction**
 
 - [ ] Publisher
-    - [ ] Read about publisher
+    - [x] Read about publisher https://github.com/crazymanish/what-matters-most/pull/58
     - [ ] Built-in publishers
     - [ ] Custom publisher
     - [ ] Practices
