@@ -9,6 +9,8 @@ import Foundation
 import Combine
 import XCTest
 
+/// - `Just` is a built-in publisher that emits an output to each subscriber just once, and then finishes.
+/// - https://developer.apple.com/documentation/combine/just/
 final class JustTests: XCTestCase {
     var justPublisher: Just<String>!
     var subject: JustTestingViewModel<String>!
