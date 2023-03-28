@@ -17,6 +17,8 @@
 		9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B77D29D2149A00CB89C8 /* JustTests.swift */; };
 		9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B77F29D2876200CB89C8 /* FutureTests.swift */; };
 		9642B78329D28DEA00CB89C8 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B78229D28DEA00CB89C8 /* DispatchQueueType.swift */; };
+		9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7A429D365D100CB89C8 /* EmptyTests.swift */; };
+		9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7A629D369A600CB89C8 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		9642B77D29D2149A00CB89C8 /* JustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTests.swift; sourceTree = "<group>"; };
 		9642B77F29D2876200CB89C8 /* FutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureTests.swift; sourceTree = "<group>"; };
 		9642B78229D28DEA00CB89C8 /* DispatchQueueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
+		9642B7A429D365D100CB89C8 /* EmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTests.swift; sourceTree = "<group>"; };
+		9642B7A629D369A600CB89C8 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		9642B77C29D2145B00CB89C8 /* BuiltInPublishers */ = {
 			isa = PBXGroup;
 			children = (
+				9642B7A429D365D100CB89C8 /* EmptyTests.swift */,
 				9642B77F29D2876200CB89C8 /* FutureTests.swift */,
 				9642B77D29D2149A00CB89C8 /* JustTests.swift */,
 			);
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				9642B78229D28DEA00CB89C8 /* DispatchQueueType.swift */,
+				9642B7A629D369A600CB89C8 /* ApiError.swift */,
 			);
 			path = TestHelpers;
 			sourceTree = "<group>";
@@ -301,10 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */,
 				9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */,
 				9642B78329D28DEA00CB89C8 /* DispatchQueueType.swift in Sources */,
 				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
+				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
