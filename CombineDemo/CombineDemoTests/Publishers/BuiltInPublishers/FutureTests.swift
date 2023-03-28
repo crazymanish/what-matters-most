@@ -29,8 +29,6 @@ final class FutureTests: XCTestCase {
     }
 
     override func tearDown() {
-        subject.cancellables.forEach { $0.cancel() }
-        subject.cancellables.removeAll()
         subject = nil
         dispatchQueue = nil
 
