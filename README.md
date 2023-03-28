@@ -20,7 +20,7 @@
 
 - [ ] Publisher
     - [x] Read about publisher https://github.com/crazymanish/what-matters-most/pull/58
-    - [x] Built-in publishers (`Just` https://github.com/crazymanish/what-matters-most/pull/59, `Future` https://github.com/crazymanish/what-matters-most/pull/60)
+    - [x] Built-in publishers (`Just` https://github.com/crazymanish/what-matters-most/pull/59, `Future` https://github.com/crazymanish/what-matters-most/pull/60 , `Empty` https://github.com/crazymanish/what-matters-most/pull/61)
     - [ ] Custom publisher
     - [ ] Practices
 - [ ] Subscriber
