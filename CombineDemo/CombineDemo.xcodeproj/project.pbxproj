@@ -14,6 +14,7 @@
 		9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B76229D2130600CB89C8 /* CombineDemoTests.swift */; };
 		9642B76D29D2130600CB89C8 /* CombineDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B76C29D2130600CB89C8 /* CombineDemoUITests.swift */; };
 		9642B76F29D2130600CB89C8 /* CombineDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B76E29D2130600CB89C8 /* CombineDemoUITestsLaunchTests.swift */; };
+		9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B77D29D2149A00CB89C8 /* JustTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9642B76829D2130600CB89C8 /* CombineDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9642B76C29D2130600CB89C8 /* CombineDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoUITests.swift; sourceTree = "<group>"; };
 		9642B76E29D2130600CB89C8 /* CombineDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9642B77D29D2149A00CB89C8 /* JustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		9642B76129D2130600CB89C8 /* CombineDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				9642B77B29D2144800CB89C8 /* Publishers */,
 				9642B76229D2130600CB89C8 /* CombineDemoTests.swift */,
 			);
 			path = CombineDemoTests;
@@ -127,6 +130,22 @@
 				9642B76E29D2130600CB89C8 /* CombineDemoUITestsLaunchTests.swift */,
 			);
 			path = CombineDemoUITests;
+			sourceTree = "<group>";
+		};
+		9642B77B29D2144800CB89C8 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				9642B77C29D2145B00CB89C8 /* BuiltInPublishers */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		9642B77C29D2145B00CB89C8 /* BuiltInPublishers */ = {
+			isa = PBXGroup;
+			children = (
+				9642B77D29D2149A00CB89C8 /* JustTests.swift */,
+			);
+			path = BuiltInPublishers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */,
+				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
