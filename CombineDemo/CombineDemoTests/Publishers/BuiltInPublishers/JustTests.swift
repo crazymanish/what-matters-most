@@ -23,8 +23,6 @@ final class JustTests: XCTestCase {
     }
 
     override func tearDown() {
-        subject.cancellables.forEach { $0.cancel() }
-        subject.cancellables.removeAll()
         justPublisher = nil
         subject = nil
 
