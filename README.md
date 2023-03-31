@@ -27,6 +27,7 @@
       - `Record` https://github.com/crazymanish/what-matters-most/pull/64
     - [x] Custom publisher 
       - `DefaultValue` https://github.com/crazymanish/what-matters-most/pull/65
+      - `DefaultError` https://github.com/crazymanish/what-matters-most/pull/66
     - [ ] Practices
 - [ ] Subscriber
     - [ ] Read about subscriber
