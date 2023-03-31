@@ -25,7 +25,8 @@
       - `Empty` https://github.com/crazymanish/what-matters-most/pull/61, `Fail` https://github.com/crazymanish/what-matters-most/pull/62
       - `Deferred` https://github.com/crazymanish/what-matters-most/pull/63
       - `Record` https://github.com/crazymanish/what-matters-most/pull/64
-    - [ ] Custom publisher
+    - [x] Custom publisher 
+      - `DefaultValue` https://github.com/crazymanish/what-matters-most/pull/65
     - [ ] Practices
 - [ ] Subscriber
     - [ ] Read about subscriber
