@@ -35,7 +35,7 @@ final class DefaultErrorTests: XCTestCase {
         super.tearDown()
     }
 
-    func testFailPublisher() {
+    func testErrorPublisher() {
         let publisher = DefaultError<Int, ApiError>(error: ApiError(code: .notFound))
 
         publisher.sink { [weak self] completion in
@@ -55,7 +55,7 @@ final class DefaultErrorTests: XCTestCase {
         XCTAssertEqual(receivedError?.code, .notFound) // finished with correct failure
     }
 
-    func testFailPublisherWithMultipleSink() {
+    func testErrorPublisherWithMultipleSink() {
         let publisher = DefaultError<Int, ApiError>(error: ApiError(code: .notFound))
 
         publisher.sink { [weak self] completion in
