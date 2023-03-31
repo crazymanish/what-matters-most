@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D1EA29D56B8600A9D790 /* DeferredTests.swift */; };
+		9631D28029D6242700A9D790 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D27F29D6242700A9D790 /* RecordTests.swift */; };
 		9642B75129D2130500CB89C8 /* CombineDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B75029D2130500CB89C8 /* CombineDemoApp.swift */; };
 		9642B75329D2130500CB89C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B75229D2130500CB89C8 /* ContentView.swift */; };
 		9642B75529D2130600CB89C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9642B75429D2130600CB89C8 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		9631D1EA29D56B8600A9D790 /* DeferredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredTests.swift; sourceTree = "<group>"; };
+		9631D27F29D6242700A9D790 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
 		9642B74D29D2130500CB89C8 /* CombineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9642B75029D2130500CB89C8 /* CombineDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoApp.swift; sourceTree = "<group>"; };
 		9642B75229D2130500CB89C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				9642B7F629D4C54600CB89C8 /* FailTests.swift */,
 				9642B77F29D2876200CB89C8 /* FutureTests.swift */,
 				9642B77D29D2149A00CB89C8 /* JustTests.swift */,
+				9631D27F29D6242700A9D790 /* RecordTests.swift */,
 			);
 			path = BuiltInPublishers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */,
 				9642B78329D28DEA00CB89C8 /* DispatchQueueType.swift in Sources */,
 				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
+				9631D28029D6242700A9D790 /* RecordTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */,
