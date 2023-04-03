@@ -18,7 +18,7 @@
 -------------------------------------------
 **Section1: Introduction**
 
-- [ ] Publisher
+- [x] Publisher
     - [x] Read about publisher https://github.com/crazymanish/what-matters-most/pull/58
     - [x] Built-in publishers 
       - `Just` https://github.com/crazymanish/what-matters-most/pull/59, `Future` https://github.com/crazymanish/what-matters-most/pull/60  
@@ -28,7 +28,8 @@
     - [x] Custom publisher 
       - `DefaultValue` https://github.com/crazymanish/what-matters-most/pull/65
       - `DefaultError` https://github.com/crazymanish/what-matters-most/pull/66
-    - [ ] Practices
+    - [x] Practices 
+      - `NotificationCenter` https://github.com/crazymanish/what-matters-most/pull/67
 - [ ] Subscriber
     - [ ] Read about subscriber
     - [ ] Built-in subscribers
