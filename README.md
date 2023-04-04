@@ -31,6 +31,7 @@
     - [x] Practices 
       - `NotificationCenter` https://github.com/crazymanish/what-matters-most/pull/67
       - `URLSession` https://github.com/crazymanish/what-matters-most/pull/68
+      - `UserDefaults` https://github.com/crazymanish/what-matters-most/pull/69
 - [ ] Subscriber
     - [ ] Read about subscriber
     - [ ] Built-in subscribers
