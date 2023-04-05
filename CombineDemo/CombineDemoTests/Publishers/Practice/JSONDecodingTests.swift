@@ -18,6 +18,7 @@ final class JSONDecodingTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
+        // TODO: start using mocks, instead real API
         let apiURL = URL(string: "https://api.github.com/users/crazymanish")
         urlSession = URLSession.shared
         publisher = urlSession.dataTaskPublisher(with: apiURL!)
