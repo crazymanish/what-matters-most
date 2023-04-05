@@ -16,9 +16,18 @@ struct ApiError {
 }
 
 extension ApiError {
-    enum Code: Int {
-        case notFound = 404
-        case notImplemented = 501
+    enum Code {
+        case notFound
+        case notImplemented
+        case httpStatus(code: Int)
+
+        var value: Int {
+            switch self {
+            case .notFound: return 404
+            case .notImplemented: return 501
+            case .httpStatus(code: let code): return code
+            }
+        }
     }
 }
 
