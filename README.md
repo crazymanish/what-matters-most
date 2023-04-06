@@ -33,6 +33,7 @@
       - `URLSession` https://github.com/crazymanish/what-matters-most/pull/68
       - `UserDefaults` https://github.com/crazymanish/what-matters-most/pull/69
       - `JSON parsing` https://github.com/crazymanish/what-matters-most/pull/70
+      - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
 - [ ] Subscriber
     - [ ] Read about subscriber
     - [ ] Built-in subscribers
