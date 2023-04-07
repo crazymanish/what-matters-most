@@ -35,7 +35,7 @@
       - `JSON parsing` https://github.com/crazymanish/what-matters-most/pull/70
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
 - [ ] Subscriber
-    - [ ] Read about subscriber
+    - [x] Read about subscriber https://github.com/crazymanish/what-matters-most/pull/72
     - [ ] Built-in subscribers
     - [ ] Custom subscribers
     - [ ] Practices
