@@ -36,7 +36,9 @@
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
 - [ ] Subscriber
     - [x] Read about subscriber https://github.com/crazymanish/what-matters-most/pull/72
-    - [ ] Built-in subscribers
+    - [x] Built-in subscribers
+      - `sink(receiveCompletion:receiveValue:)` https://github.com/crazymanish/what-matters-most/pull/59
+      - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
     - [ ] Custom subscribers
     - [ ] Practices
 - [ ] Subject (Publisher & Subscriber)
