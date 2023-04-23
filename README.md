@@ -34,14 +34,17 @@
       - `UserDefaults` https://github.com/crazymanish/what-matters-most/pull/69
       - `JSON parsing` https://github.com/crazymanish/what-matters-most/pull/70
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
-- [ ] Subscriber
+- [x] Subscriber
     - [x] Read about subscriber https://github.com/crazymanish/what-matters-most/pull/72
     - [x] Built-in subscribers
       - `sink(receiveCompletion:receiveValue:)` https://github.com/crazymanish/what-matters-most/pull/59
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
     - [x] Custom subscribers 
       - `IntSubscriber` https://github.com/crazymanish/what-matters-most/pull/74
-    - [ ] Practices
+    - [x] Practices
+      - `sink(receiveCompletion:receiveValue:)` https://github.com/crazymanish/what-matters-most/pull/59
+      - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
+      - `IntSubscriber` https://github.com/crazymanish/what-matters-most/pull/74
 - [ ] Subject (Publisher & Subscriber)
     - [ ] Read about subject
     - [ ] Built-in subjects
