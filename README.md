@@ -46,7 +46,7 @@
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
       - `IntSubscriber` https://github.com/crazymanish/what-matters-most/pull/74
 - [ ] Subject (Publisher & Subscriber)
-    - [ ] Read about subject
+    - [x] Read about subject https://github.com/crazymanish/what-matters-most/pull/75
     - [ ] Built-in subjects
     - [ ] Custom subjects?
     - [ ] Practices
