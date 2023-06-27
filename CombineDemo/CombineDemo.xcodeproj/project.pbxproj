@@ -33,6 +33,7 @@
 		9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7A429D365D100CB89C8 /* EmptyTests.swift */; };
 		9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7A629D369A600CB89C8 /* ApiError.swift */; };
 		9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7F629D4C54600CB89C8 /* FailTests.swift */; };
+		967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9642B7A429D365D100CB89C8 /* EmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTests.swift; sourceTree = "<group>"; };
 		9642B7A629D369A600CB89C8 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		9642B7F629D4C54600CB89C8 /* FailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailTests.swift; sourceTree = "<group>"; };
+		967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				9642B76229D2130600CB89C8 /* CombineDemoTests.swift */,
 				9642B77B29D2144800CB89C8 /* Publishers */,
+				967AF3A72A485BF700AB60CA /* Subject */,
 				9631D2E729E6576A00A9D790 /* Subscriber */,
 				9642B78129D28DCE00CB89C8 /* TestHelpers */,
 			);
@@ -240,6 +243,14 @@
 				9631D2C329DD161500A9D790 /* URLSession+Decodable.swift */,
 			);
 			path = TestHelpers;
+			sourceTree = "<group>";
+		};
+		967AF3A72A485BF700AB60CA /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */,
+			);
+			path = Subject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +399,7 @@
 				9631D29529D7036200A9D790 /* DefaultValueTests.swift in Sources */,
 				9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */,
 				9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */,
+				967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */,
 				9631D2C629DEA8A200A9D790 /* AssignTests.swift in Sources */,
 				9631D29C29DA736200A9D790 /* NotificationTests.swift in Sources */,
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
