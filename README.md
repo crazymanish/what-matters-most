@@ -47,7 +47,9 @@
       - `IntSubscriber` https://github.com/crazymanish/what-matters-most/pull/74
 - [ ] Subject (Publisher & Subscriber)
     - [x] Read about subject https://github.com/crazymanish/what-matters-most/pull/75
-    - [ ] Built-in subjects
+    - [x] Built-in subjects
+      - `PassthroughSubject` https://github.com/crazymanish/what-matters-most/pull/76
+      - `CurrentValueSubject`
     - [ ] Custom subjects?
     - [ ] Practices
   
