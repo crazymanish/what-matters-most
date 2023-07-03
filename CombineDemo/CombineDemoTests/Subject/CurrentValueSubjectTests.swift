@@ -1,17 +1,17 @@
 //
-//  PassthroughSubjectTests.swift
+//  CurrentValueSubjectTests.swift
 //  CombineDemoTests
 //
-//  Created by Manish Rathi on 25/06/2023.
+//  Created by Manish Rathi on 03/07/2023.
 //
 
 import Foundation
 import Combine
 import XCTest
 
-/// - `PassthroughSubject` is a subject that broadcasts elements to downstream subscribers.
-/// - https://developer.apple.com/documentation/combine/passthroughsubject
-final class PassthroughSubjectTests: XCTestCase {
+/// - `CurrentValueSubject` is a subject that wraps a single value and publishes a new element whenever the value changes.
+/// - https://developer.apple.com/documentation/combine/currentvaluesubject
+final class CurrentValueSubjectTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
     var isFinishedCalled: Bool!
     var receivedErrors: [ApiError]!
@@ -35,8 +35,8 @@ final class PassthroughSubjectTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPassthroughSubjectWithFinished() {
-        let subject = PassthroughSubject<Int, Never>()
+    func testCurrentValueSubjectWithFinished() {
+        let subject = CurrentValueSubject<Int, Never>(0)
 
         subject.sink { [weak self] completion in
             switch completion {
@@ -48,18 +48,27 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 0) // default current value
+
         // passing down new values with Subject
         subject.send(1) // Sending value before finish
+        XCTAssertEqual(subject.value, 1) // current value
+
         subject.send(2) // Sending value before finish
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(completion: .finished) // sending finish
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(3) // Trying to send value after finish
+        XCTAssertEqual(subject.value, 2) // current value
 
         XCTAssertTrue(isFinishedCalled) // Finished got called correctly
-        XCTAssertEqual(receivedValues, [1, 2]) // received values before finish
+        XCTAssertEqual(receivedValues, [0, 1, 2]) // received values before finish
     }
 
-    func testPassthroughSubjectWithError() {
-        let subject = PassthroughSubject<Int, ApiError>()
+    func testCurrentValueSubjectWithError() {
+        let subject = CurrentValueSubject<Int, ApiError>(0)
         let error = ApiError(code: .notFound)
 
         subject.sink { [weak self] completion in
@@ -74,19 +83,28 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 0) // default current value
+
         // passing down new values with Subject
         subject.send(1) // Sending value before finish
+        XCTAssertEqual(subject.value, 1) // current value
+
         subject.send(2) // Sending value before finish
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(completion: .failure(error)) // sending error
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(3) // Trying to send value after error
+        XCTAssertEqual(subject.value, 2) // current value
 
         XCTAssertFalse(isFinishedCalled) // Finished not get called
         XCTAssertEqual(receivedErrors, [error]) // Error got called correctly
-        XCTAssertEqual(receivedValues, [1, 2]) // received values before error
+        XCTAssertEqual(receivedValues, [0, 1, 2]) // received values before error
     }
 
-    func testPassthroughSubjectWithMultipleSink() {
-        let subject = PassthroughSubject<Int, Never>()
+    func testCurrentValueSubjectWithMultipleSink() {
+        let subject = CurrentValueSubject<Int, Never>(0)
 
         subject.sink { [weak self] completion in
             switch completion {
@@ -98,12 +116,17 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 0) // default current value
+
         // passing down new values with Subject
         subject.send(1) // Sending value before finish
+        XCTAssertEqual(subject.value, 1) // current value
+
         subject.send(2) // Sending value before finish
+        XCTAssertEqual(subject.value, 2) // current value
 
         XCTAssertFalse(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [1, 2])
+        XCTAssertEqual(receivedValues, [0, 1, 2])
 
         // Reset values
         isFinishedCalled = false
@@ -120,18 +143,27 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 2) // last current value
+
         // passing down new values with Subject
-        subject.send(1) // Sending value before finish
-        subject.send(2) // Sending value before finish
+        subject.send(10) // Sending value before finish
+        XCTAssertEqual(subject.value, 10) // current value
+
+        subject.send(20) // Sending value before finish
+        XCTAssertEqual(subject.value, 20) // current value
+
         subject.send(completion: .finished) // sending finish
-        subject.send(3) // Trying to send value after finish
+        XCTAssertEqual(subject.value, 20) // current value
+
+        subject.send(30) // Trying to send value after finish
+        XCTAssertEqual(subject.value, 20) // current value
 
         XCTAssertTrue(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [1, 1, 2, 2]) // received 2 times for both sink (before finish, did not receive 3)
+        XCTAssertEqual(receivedValues, [2, 10, 10, 20, 20]) // received 2 times for both sink (before finish, did not receive 3)
     }
 
-    func testPassthroughSubjectWithMultipleSink2() {
-        let subject = PassthroughSubject<Int, Never>()
+    func testCurrentValueSubjectWithMultipleSink2() {
+        let subject = CurrentValueSubject<Int, Never>(0)
 
         subject.sink { [weak self] completion in
             switch completion {
@@ -143,14 +175,23 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 0) // default current value
+
         // passing down new values with Subject
         subject.send(1) // Sending value before finish
+        XCTAssertEqual(subject.value, 1) // current value
+
         subject.send(2) // Sending value before finish
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(completion: .finished) // sending finish (2nd below sink will not work, already received finish)
+        XCTAssertEqual(subject.value, 2) // current value
+
         subject.send(3) // Trying to send value after finish
+        XCTAssertEqual(subject.value, 2) // current value
 
         XCTAssertTrue(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [1, 2])
+        XCTAssertEqual(receivedValues, [0, 1, 2])
 
         // Reset values
         isFinishedCalled = false
@@ -167,11 +208,20 @@ final class PassthroughSubjectTests: XCTestCase {
         }
         .store(in: &cancellables)
 
+        XCTAssertEqual(subject.value, 2) // last current value
+
         // passing down new values with Subject
-        subject.send(1) // Sending value before finish
-        subject.send(2) // Sending value before finish
+        subject.send(1) // Sending value after finish
+        XCTAssertEqual(subject.value, 2) // last current value because already finished above
+
+        subject.send(2) // Sending value after finish
+        XCTAssertEqual(subject.value, 2) // last current value because already finished above
+
         subject.send(completion: .finished) // sending finish
+        XCTAssertEqual(subject.value, 2) // last current value because already finished above
+
         subject.send(3) // Trying to send value after finish
+        XCTAssertEqual(subject.value, 2) // last current value because already finished above
 
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, []) // Nothing received because already finished

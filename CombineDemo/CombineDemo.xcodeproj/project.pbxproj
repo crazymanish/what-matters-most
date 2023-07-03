@@ -34,6 +34,7 @@
 		9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7A629D369A600CB89C8 /* ApiError.swift */; };
 		9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7F629D4C54600CB89C8 /* FailTests.swift */; };
 		967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */; };
+		967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		9642B7A629D369A600CB89C8 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		9642B7F629D4C54600CB89C8 /* FailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailTests.swift; sourceTree = "<group>"; };
 		967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectTests.swift; sourceTree = "<group>"; };
+		967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueSubjectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */,
+				967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */,
 			);
 			path = Subject;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */,
 				9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */,
 				9631D2C229DD156A00A9D790 /* JSONDecodingTests.swift in Sources */,
 				9631D29529D7036200A9D790 /* DefaultValueTests.swift in Sources */,
