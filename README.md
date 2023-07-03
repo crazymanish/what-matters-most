@@ -45,13 +45,13 @@
       - `sink(receiveCompletion:receiveValue:)` https://github.com/crazymanish/what-matters-most/pull/59
       - `assign(to:on:)` https://github.com/crazymanish/what-matters-most/pull/71
       - `IntSubscriber` https://github.com/crazymanish/what-matters-most/pull/74
-- [ ] Subject (Publisher & Subscriber)
+- [x] Subject (Publisher & Subscriber)
     - [x] Read about subject https://github.com/crazymanish/what-matters-most/pull/75
     - [x] Built-in subjects
       - `PassthroughSubject` https://github.com/crazymanish/what-matters-most/pull/76
-      - `CurrentValueSubject`
-    - [ ] Custom subjects?
-    - [ ] Practices
+      - `CurrentValueSubject` https://github.com/crazymanish/what-matters-most/pull/77
+    - [x] Custom subjects? https://github.com/crazymanish/what-matters-most/pull/76, https://github.com/crazymanish/what-matters-most/pull/77
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/76, https://github.com/crazymanish/what-matters-most/pull/77
   
   ------------------------------------------
   
