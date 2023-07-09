@@ -58,7 +58,7 @@
   **Section2: Operators**
 
 - [ ] Transforming Operators
-    - [ ] Collecting values
+    - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/78
     - [ ] Mapping values
     - [ ] Flattening publishers
     - [ ] Replacing/transforming upstream output
