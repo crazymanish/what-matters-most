@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */; };
+		9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9612D6AF2A5ACE06007CBD1A /* ReplaceEmptyTests.swift */; };
 		9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D1EA29D56B8600A9D790 /* DeferredTests.swift */; };
 		9631D28029D6242700A9D790 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D27F29D6242700A9D790 /* RecordTests.swift */; };
 		9631D29329D7003C00A9D790 /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D29229D7003C00A9D790 /* DefaultValue.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryMapTests.swift; sourceTree = "<group>"; };
+		9612D6AF2A5ACE06007CBD1A /* ReplaceEmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceEmptyTests.swift; sourceTree = "<group>"; };
 		9631D1EA29D56B8600A9D790 /* DeferredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredTests.swift; sourceTree = "<group>"; };
 		9631D27F29D6242700A9D790 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
 		9631D29229D7003C00A9D790 /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */,
 				9638B7B42A5ABDEF005F01A0 /* FlatMapTests.swift */,
 				967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */,
+				9612D6AF2A5ACE06007CBD1A /* ReplaceEmptyTests.swift */,
 			);
 			path = TransformingOperators;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				9631D2C429DD161500A9D790 /* URLSession+Decodable.swift in Sources */,
 				9631D28029D6242700A9D790 /* RecordTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
+				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				9631D29929D70D6A00A9D790 /* DefaultErrorTests.swift in Sources */,
 				9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */,

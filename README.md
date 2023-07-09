@@ -66,6 +66,7 @@
     - [x] Flattening publishers https://github.com/crazymanish/what-matters-most/pull/82
     - [x] Replacing/transforming upstream output
       - `replaceNil(with:)` https://github.com/crazymanish/what-matters-most/pull/83
+      - `replaceEmpty(with:)` https://github.com/crazymanish/what-matters-most/pull/84
     - [ ] Practices
 - [ ] Filtering Operators
     - [ ] Compacting and ignoring
