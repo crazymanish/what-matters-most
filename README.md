@@ -64,7 +64,8 @@
       - `map keypath value` https://github.com/crazymanish/what-matters-most/pull/80
       - `tryMap value` https://github.com/crazymanish/what-matters-most/pull/81
     - [x] Flattening publishers https://github.com/crazymanish/what-matters-most/pull/82
-    - [ ] Replacing/transforming upstream output
+    - [x] Replacing/transforming upstream output
+      - `replaceNil(with:)` https://github.com/crazymanish/what-matters-most/pull/83
     - [ ] Practices
 - [ ] Filtering Operators
     - [ ] Compacting and ignoring

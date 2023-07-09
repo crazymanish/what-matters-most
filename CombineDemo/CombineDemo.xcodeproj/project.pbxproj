@@ -40,6 +40,7 @@
 		9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B7F629D4C54600CB89C8 /* FailTests.swift */; };
 		967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */; };
 		967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */; };
+		967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		9642B7F629D4C54600CB89C8 /* FailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailTests.swift; sourceTree = "<group>"; };
 		967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectTests.swift; sourceTree = "<group>"; };
 		967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueSubjectTests.swift; sourceTree = "<group>"; };
+		967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceNilTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				96321F082A5AB41200C60D8A /* MapKeypathTests.swift */,
 				9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */,
 				9638B7B42A5ABDEF005F01A0 /* FlatMapTests.swift */,
+				967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */,
 			);
 			path = TransformingOperators;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */,
 				9631D2C229DD156A00A9D790 /* JSONDecodingTests.swift in Sources */,
 				9631D29529D7036200A9D790 /* DefaultValueTests.swift in Sources */,
+				967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */,
 				9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */,
 				9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */,
 				967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */,
