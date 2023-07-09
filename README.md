@@ -61,6 +61,7 @@
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/78
     - [x] Mapping values
       - `map value` https://github.com/crazymanish/what-matters-most/pull/79
+      - `map keypath value` https://github.com/crazymanish/what-matters-most/pull/80
     - [ ] Flattening publishers
     - [ ] Replacing/transforming upstream output
     - [ ] Practices
