@@ -1,5 +1,5 @@
 //
-//  CompactMapTests.swift
+//  IgnoreOutputTests.swift
 //  CombineDemoTests
 //
 //  Created by Manish Rathi on 09/07/2023.
@@ -9,12 +9,12 @@ import Foundation
 import Combine
 import XCTest
 
-/// - `compactMap(_:)`Calls a closure with each received element and publishes any returned optional that has a value.
-/// - https://developer.apple.com/documentation/combine/publishers/collect/compactmap(_:)
+/// - Sometimes, `all you want to know is that the publisher has finished emitting values`, disregarding the actual values.
+/// - When such a scenario occurs, you can use the ignoreOutput operator
 ///
-/// - `tryCompactMap(_:)` Calls an error-throwing closure with each received element and publishes any returned optional that has a value.
-/// - https://developer.apple.com/documentation/combine/publishers/collect/trycompactmap(_:)
-final class CompactMapTests: XCTestCase {
+/// - `ignoreOutput()` Ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed).
+/// - https://developer.apple.com/documentation/combine/publishers/collect/ignoreoutput()
+final class IgnoreOutputTests: XCTestCase {
     var publisher: Publishers.Sequence<[String], Never>!
     var cancellables: Set<AnyCancellable>!
     var isFinishedCalled: Bool!
@@ -35,7 +35,7 @@ final class CompactMapTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPublisherWithCompactMapOperator() {
+    func testPublisherWithIgnoreOutputOperator() {
         // Given: Publisher
         // publisher = ["a", "1.24", "3", "def", "45", "0.23"].publisher
         var receivedValues: [Double] = []
@@ -43,6 +43,7 @@ final class CompactMapTests: XCTestCase {
         // When: Sink(Subscription)
         publisher
             .compactMap { Double($0) } // Remove nil value after typecast
+            .ignoreOutput()
             .sink { [weak self] completion in
             switch completion {
             case .finished:
@@ -54,14 +55,13 @@ final class CompactMapTests: XCTestCase {
         .store(in: &cancellables)
 
         // Then: Receiving correct value
-        XCTAssertTrue(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [1.24, 3.0, 45.0, 0.23])
+        XCTAssertTrue(isFinishedCalled) // Successful finished called
+        XCTAssertEqual(receivedValues, []) // we are using `ignoreOutput` and receive nothing
     }
 
-    func testPublisherWithTryCompactMapOperator() {
+    func testPublisherWithIgnoreOutputWithErrorOperator() {
         // Given: Publisher
         // publisher = ["a", "1.24", "3", "def", "45", "0.23"].publisher
-        var receivedValues: [Double] = []
         var receivedError: ApiError?
 
         // When: Sink(Subscription)
@@ -71,6 +71,7 @@ final class CompactMapTests: XCTestCase {
 
                 return Double($0)
             }
+            .ignoreOutput()
             .sink { [weak self] completion in
             switch completion {
             case .finished:
@@ -78,14 +79,11 @@ final class CompactMapTests: XCTestCase {
             case .failure(let error):
                 receivedError = error as? ApiError
             }
-        } receiveValue: { value in
-            receivedValues.append(value)
-        }
+        } receiveValue: { _ in} // This will never execute and we are using `ignoreOutput` and this line will never execute
         .store(in: &cancellables)
 
         // Then: Receiving correct value
         XCTAssertFalse(isFinishedCalled) // Successful finished is not called because Upstream got an error
-        XCTAssertEqual(receivedValues, [1.24, 3.0]) // after def, nothing is received because of error
         XCTAssertEqual(receivedError?.code, .notFound) // Finished with correct error
     }
 }

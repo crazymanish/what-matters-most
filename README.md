@@ -74,6 +74,7 @@
       - `filter(_:) tryFilter(_:)` https://github.com/crazymanish/what-matters-most/pull/87
       - `removeDuplicates(by:) tryRemoveDuplicates(by:)` https://github.com/crazymanish/what-matters-most/pull/88
       - `compactMap(_:) tryCompactMap(_:)` https://github.com/crazymanish/what-matters-most/pull/89
+      - `ignoreOutput()` https://github.com/crazymanish/what-matters-most/pull/90
     - [ ] Finding values
     - [ ] Droping values
     - [ ] Limiting values
