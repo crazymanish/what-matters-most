@@ -1,5 +1,5 @@
 //
-//  ReplaceEmptyTests.swift
+//  ScanTests.swift
 //  CombineDemoTests
 //
 //  Created by Manish Rathi on 09/07/2023.
@@ -9,11 +9,9 @@ import Foundation
 import Combine
 import XCTest
 
-/// - `replaceEmpty(with:)` Replaces an empty stream with the provided element.
-/// - Use replaceEmpty(with:) to provide a replacement element if the upstream publisher finishes without producing any elements.
-/// - Conversely, providing a non-empty publisher publishes all elements and the publisher then terminates normally.
-/// - https://developer.apple.com/documentation/combine/publishers/collect/replaceempty(with:)
-final class ReplaceEmptyTests: XCTestCase {
+/// - `scan(_:_:)` Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure.
+/// - https://developer.apple.com/documentation/combine/publishers/collect/scan(_:_:)
+final class ScanTests: XCTestCase {
     var publisher: Publishers.Sequence<[Int], Never>!
     var cancellables: Set<AnyCancellable>!
     var isFinishedCalled: Bool!
@@ -21,6 +19,7 @@ final class ReplaceEmptyTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
+        publisher = [1, 2, 3, 4, 5].publisher
         cancellables = []
         isFinishedCalled =  false
     }
@@ -33,14 +32,14 @@ final class ReplaceEmptyTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPublisherWithReplaceEmptyOperator() {
+    func testPublisherWithScanOperator() {
         // Given: Publisher
-        publisher = [].publisher
+        // publisher = [1, 2, 3, 4, 5].publisher
         var receivedValues: [Int] = []
 
         // When: Sink(Subscription)
         publisher
-            .replaceEmpty(with: 0) // Replace empty publisher to 0 for downstream
+            .scan(0) { $0 + $1 } // Initial value is 0, and later will keep doing the prefix-sum
             .sink { [weak self] completion in
             switch completion {
             case .finished:
@@ -53,17 +52,17 @@ final class ReplaceEmptyTests: XCTestCase {
 
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [0])
+        XCTAssertEqual(receivedValues, [1, 3, 6, 10, 15]) // [0+1, 1+2, 3+3, 6+4, 10+5]
     }
 
-    func testPublisherWithReplaceEmptyOperatorScenario2() {
+    func testPublisherWithScanOperatorScenario2() {
         // Given: Publisher
-        publisher = [10, 20].publisher
+        // publisher = [1, 2, 3, 4, 5].publisher
         var receivedValues: [Int] = []
 
         // When: Sink(Subscription)
         publisher
-            .replaceEmpty(with: 0) // Will do nothing, because publisher is a non-empty and will publishes all elements and the publisher then terminates normally.
+            .scan(100) { $0 + $1 } // Initial value is 100, and later will keep doing the prefix-sum
             .sink { [weak self] completion in
             switch completion {
             case .finished:
@@ -76,6 +75,6 @@ final class ReplaceEmptyTests: XCTestCase {
 
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
-        XCTAssertEqual(receivedValues, [10, 20])
+        XCTAssertEqual(receivedValues, [101, 103, 106, 110, 115]) // [100+1, 101+2, 103+3, 106+4, 110+5]
     }
 }

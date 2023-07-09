@@ -67,6 +67,7 @@
     - [x] Replacing/transforming upstream output
       - `replaceNil(with:)` https://github.com/crazymanish/what-matters-most/pull/83
       - `replaceEmpty(with:)` https://github.com/crazymanish/what-matters-most/pull/84
+      - `scan(initialResult, with:)` https://github.com/crazymanish/what-matters-most/pull/85
     - [ ] Practices
 - [ ] Filtering Operators
     - [ ] Compacting and ignoring
