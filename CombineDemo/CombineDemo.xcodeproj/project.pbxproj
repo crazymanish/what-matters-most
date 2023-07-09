@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */; };
 		9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D1EA29D56B8600A9D790 /* DeferredTests.swift */; };
 		9631D28029D6242700A9D790 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D27F29D6242700A9D790 /* RecordTests.swift */; };
 		9631D29329D7003C00A9D790 /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D29229D7003C00A9D790 /* DefaultValue.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryMapTests.swift; sourceTree = "<group>"; };
 		9631D1EA29D56B8600A9D790 /* DeferredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredTests.swift; sourceTree = "<group>"; };
 		9631D27F29D6242700A9D790 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
 		9631D29229D7003C00A9D790 /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				96321F042A5AA32200C60D8A /* CollectTests.swift */,
 				96321F062A5AACA400C60D8A /* MapTests.swift */,
 				96321F082A5AB41200C60D8A /* MapKeypathTests.swift */,
+				9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */,
 			);
 			path = TransformingOperators;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				9631D2C629DEA8A200A9D790 /* AssignTests.swift in Sources */,
 				9631D29C29DA736200A9D790 /* NotificationTests.swift in Sources */,
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
+				9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */,
 				96321F092A5AB41200C60D8A /* MapKeypathTests.swift in Sources */,
 				9642B78329D28DEA00CB89C8 /* DispatchQueueType.swift in Sources */,
 				9631D29E29DB503900A9D790 /* URLSessionTests.swift in Sources */,
