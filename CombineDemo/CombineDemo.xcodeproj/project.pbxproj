@@ -22,6 +22,7 @@
 		9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631D2E929E657D500A9D790 /* IntSubscriberTests.swift */; };
 		96321F052A5AA32200C60D8A /* CollectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96321F042A5AA32200C60D8A /* CollectTests.swift */; };
 		96321F072A5AACA400C60D8A /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96321F062A5AACA400C60D8A /* MapTests.swift */; };
+		96321F092A5AB41200C60D8A /* MapKeypathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96321F082A5AB41200C60D8A /* MapKeypathTests.swift */; };
 		9642B75129D2130500CB89C8 /* CombineDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B75029D2130500CB89C8 /* CombineDemoApp.swift */; };
 		9642B75329D2130500CB89C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642B75229D2130500CB89C8 /* ContentView.swift */; };
 		9642B75529D2130600CB89C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9642B75429D2130600CB89C8 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		9631D2E929E657D500A9D790 /* IntSubscriberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntSubscriberTests.swift; sourceTree = "<group>"; };
 		96321F042A5AA32200C60D8A /* CollectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectTests.swift; sourceTree = "<group>"; };
 		96321F062A5AACA400C60D8A /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
+		96321F082A5AB41200C60D8A /* MapKeypathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeypathTests.swift; sourceTree = "<group>"; };
 		9642B74D29D2130500CB89C8 /* CombineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9642B75029D2130500CB89C8 /* CombineDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoApp.swift; sourceTree = "<group>"; };
 		9642B75229D2130500CB89C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				96321F042A5AA32200C60D8A /* CollectTests.swift */,
 				96321F062A5AACA400C60D8A /* MapTests.swift */,
+				96321F082A5AB41200C60D8A /* MapKeypathTests.swift */,
 			);
 			path = TransformingOperators;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				9631D2C629DEA8A200A9D790 /* AssignTests.swift in Sources */,
 				9631D29C29DA736200A9D790 /* NotificationTests.swift in Sources */,
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
+				96321F092A5AB41200C60D8A /* MapKeypathTests.swift in Sources */,
 				9642B78329D28DEA00CB89C8 /* DispatchQueueType.swift in Sources */,
 				9631D29E29DB503900A9D790 /* URLSessionTests.swift in Sources */,
 				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
