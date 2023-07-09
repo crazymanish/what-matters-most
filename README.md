@@ -75,7 +75,9 @@
       - `removeDuplicates(by:) tryRemoveDuplicates(by:)` https://github.com/crazymanish/what-matters-most/pull/88
       - `compactMap(_:) tryCompactMap(_:)` https://github.com/crazymanish/what-matters-most/pull/89
       - `ignoreOutput()` https://github.com/crazymanish/what-matters-most/pull/90
-    - [ ] Finding values
+    - [x] Finding values
+      - `first() first(where:) tryFirst(where:)` https://github.com/crazymanish/what-matters-most/pull/91
+      - `last() last(where:) tryLast(where:)` https://github.com/crazymanish/what-matters-most/pull/91
     - [ ] Droping values
     - [ ] Limiting values
     - [ ] Practices
