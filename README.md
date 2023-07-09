@@ -78,7 +78,10 @@
     - [x] Finding values
       - `first() first(where:) tryFirst(where:)` https://github.com/crazymanish/what-matters-most/pull/91
       - `last() last(where:) tryLast(where:)` https://github.com/crazymanish/what-matters-most/pull/91
-    - [ ] Droping values
+    - [x] Droping values
+      - `dropFirst(_:)` https://github.com/crazymanish/what-matters-most/pull/92
+      - `drop(while:) tryDrop(while:)` https://github.com/crazymanish/what-matters-most/pull/92
+      - `drop(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/92
     - [ ] Limiting values
     - [ ] Practices
 - [ ] Combining Operators
