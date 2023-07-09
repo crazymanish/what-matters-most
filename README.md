@@ -69,7 +69,7 @@
       - `replaceEmpty(with:)` https://github.com/crazymanish/what-matters-most/pull/84
       - `scan(initialResult, with:)` https://github.com/crazymanish/what-matters-most/pull/85
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/78, https://github.com/crazymanish/what-matters-most/pull/79, https://github.com/crazymanish/what-matters-most/pull/80, https://github.com/crazymanish/what-matters-most/pull/81, https://github.com/crazymanish/what-matters-most/pull/82, https://github.com/crazymanish/what-matters-most/pull/83, https://github.com/crazymanish/what-matters-most/pull/84, https://github.com/crazymanish/what-matters-most/pull/85
-- [ ] Filtering Operators
+- [x] Filtering Operators
     - [x] Compacting and ignoring
       - `filter(_:) tryFilter(_:)` https://github.com/crazymanish/what-matters-most/pull/87
       - `removeDuplicates(by:) tryRemoveDuplicates(by:)` https://github.com/crazymanish/what-matters-most/pull/88
@@ -86,7 +86,7 @@
       - `prefix(_:)` https://github.com/crazymanish/what-matters-most/pull/93
       - `prefix(while:) tryPrefix(while:)` https://github.com/crazymanish/what-matters-most/pull/93
       - `prefix(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/93
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/87, https://github.com/crazymanish/what-matters-most/pull/88, https://github.com/crazymanish/what-matters-most/pull/89, https://github.com/crazymanish/what-matters-most/pull/90, https://github.com/crazymanish/what-matters-most/pull/91, https://github.com/crazymanish/what-matters-most/pull/92, https://github.com/crazymanish/what-matters-most/pull/93, https://github.com/crazymanish/what-matters-most/pull/94
 - [ ] Combining Operators
     - [ ] Combining
     - [ ] Practices
