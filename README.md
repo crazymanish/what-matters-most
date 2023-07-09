@@ -71,7 +71,8 @@
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/78, https://github.com/crazymanish/what-matters-most/pull/79, https://github.com/crazymanish/what-matters-most/pull/80, https://github.com/crazymanish/what-matters-most/pull/81, https://github.com/crazymanish/what-matters-most/pull/82, https://github.com/crazymanish/what-matters-most/pull/83, https://github.com/crazymanish/what-matters-most/pull/84, https://github.com/crazymanish/what-matters-most/pull/85
 - [ ] Filtering Operators
     - [x] Compacting and ignoring
-      - `filter(_:) tryFilter(_:)` https://github.com/crazymanish/what-matters-most/pull/86
+      - `filter(_:) tryFilter(_:)` https://github.com/crazymanish/what-matters-most/pull/87
+      - `removeDuplicates(by:) tryRemoveDuplicates(by:)` https://github.com/crazymanish/what-matters-most/pull/88
     - [ ] Finding values
     - [ ] Droping values
     - [ ] Limiting values
