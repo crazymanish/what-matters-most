@@ -57,7 +57,7 @@
   
   **Section2: Operators**
 
-- [ ] Transforming Operators
+- [x] Transforming Operators
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/78
     - [x] Mapping values
       - `map value` https://github.com/crazymanish/what-matters-most/pull/79
@@ -68,7 +68,7 @@
       - `replaceNil(with:)` https://github.com/crazymanish/what-matters-most/pull/83
       - `replaceEmpty(with:)` https://github.com/crazymanish/what-matters-most/pull/84
       - `scan(initialResult, with:)` https://github.com/crazymanish/what-matters-most/pull/85
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/78, https://github.com/crazymanish/what-matters-most/pull/79, https://github.com/crazymanish/what-matters-most/pull/80, https://github.com/crazymanish/what-matters-most/pull/81, https://github.com/crazymanish/what-matters-most/pull/82, https://github.com/crazymanish/what-matters-most/pull/83, https://github.com/crazymanish/what-matters-most/pull/84, https://github.com/crazymanish/what-matters-most/pull/85
 - [ ] Filtering Operators
     - [ ] Compacting and ignoring
     - [ ] Filtering values
