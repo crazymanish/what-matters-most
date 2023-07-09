@@ -82,7 +82,10 @@
       - `dropFirst(_:)` https://github.com/crazymanish/what-matters-most/pull/92
       - `drop(while:) tryDrop(while:)` https://github.com/crazymanish/what-matters-most/pull/92
       - `drop(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/92
-    - [ ] Limiting values
+    - [x] Limiting values
+      - `prefix(_:)` https://github.com/crazymanish/what-matters-most/pull/93
+      - `prefix(while:) tryPrefix(while:)` https://github.com/crazymanish/what-matters-most/pull/93
+      - `prefix(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/93
     - [ ] Practices
 - [ ] Combining Operators
     - [ ] Combining
