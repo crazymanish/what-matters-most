@@ -52,6 +52,7 @@
 		967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */; };
 		96AC4A2E2A5FB47E00B2042E /* PrependingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */; };
 		96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */; };
+		96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceNilTests.swift; sourceTree = "<group>"; };
 		96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrependingTests.swift; sourceTree = "<group>"; };
 		96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendingTests.swift; sourceTree = "<group>"; };
+		96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +337,7 @@
 			children = (
 				96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */,
 				96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */,
+				96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */,
 			);
 			path = CombiningOperators;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				9631D2A029DBC51600A9D790 /* UserDefaultTests.swift in Sources */,
 				9631D2C429DD161500A9D790 /* URLSession+Decodable.swift in Sources */,
 				9631D28029D6242700A9D790 /* RecordTests.swift in Sources */,
+				96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
 				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
