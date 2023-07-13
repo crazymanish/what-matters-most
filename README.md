@@ -90,6 +90,7 @@
 - [ ] Combining Operators
     - [x] Combining
       - `prepend(_:)` https://github.com/crazymanish/what-matters-most/pull/95
+      - `prepend(Publisher)` https://github.com/crazymanish/what-matters-most/pull/96
     - [ ] Practices
 - [ ] Time manipulation Operators
     - [ ] Shifting time
