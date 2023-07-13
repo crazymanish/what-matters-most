@@ -148,4 +148,94 @@ final class PrependingTests: XCTestCase {
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [-1, 1, 3, 20, 30, 5, 6, 7, 8, 9, 10]) // Received prepended values correctly
     }
+
+    func testPublisherWithPrependOperatorAsPublisher() {
+        // Given: Publisher
+        // publisher = (5...10).publisher
+        var receivedValues: [Int] = []
+
+        // Prepending publisher2 at the beginning of publisher1. Values from publisher1 emit only after publisher2 completes.
+        let publisher2 = (11...12).publisher
+
+        // When: Sink(Subscription)
+        publisher
+            .prepend([20, 30]) // As array
+            .prepend(publisher2) // As Publisher
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [11, 12, 20, 30, 5, 6, 7, 8, 9, 10]) // Received prepended values correctly
+    }
+
+    func testPublisherWithPrependOperatorAsSubjectWithoutComplete() {
+        // Given: Publisher
+        // publisher = (5...10).publisher
+        var receivedValues: [Int] = []
+
+        // Prepending publisher2 at the beginning of publisher1. Values from publisher1 emit only after publisher2 completes.
+        let publisher2 = PassthroughSubject<Int, Never>()
+
+        // When: Sink(Subscription)
+        publisher
+            .prepend([20, 30]) // As array
+            .prepend(publisher2) // As Publisher
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Sending publisher2's subject value
+        publisher2.send(11)
+        publisher2.send(12)
+
+        // Then: Receiving correct value
+        XCTAssertFalse(isFinishedCalled) // publisher2 is not yet finished/completed.
+        XCTAssertEqual(receivedValues, [11, 12]) // Received prepended values only, because publisher2 can send more values.
+    }
+
+    func testPublisherWithPrependOperatorAsSubjectWithComplete() {
+        // Given: Publisher
+        // publisher = (5...10).publisher
+        var receivedValues: [Int] = []
+
+        // Prepending publisher2 at the beginning of publisher1. Values from publisher1 emit only after publisher2 completes.
+        let publisher2 = PassthroughSubject<Int, Never>()
+
+        // When: Sink(Subscription)
+        publisher
+            .prepend([20, 30]) // As array
+            .prepend(publisher2) // As Publisher
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Sending publisher2's subject value
+        publisher2.send(11)
+        publisher2.send(12)
+        publisher2.send(completion: .finished) // Sending completion
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [11, 12, 20, 30, 5, 6, 7, 8, 9, 10]) // Received prepended values only
+    }
 }
