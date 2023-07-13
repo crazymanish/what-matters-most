@@ -54,7 +54,7 @@ final class ZipTests: XCTestCase {
                 self?.isFinishedCalled = true
             }
         } receiveValue: { p1IntValue, p2StringValue in
-            let combinedValue = String(p1IntValue) + ":" + p2StringValue // combining here
+            let combinedValue = String(p1IntValue) + ":" + p2StringValue // combining zipping values
             receivedValues.append(combinedValue)
         }
         .store(in: &cancellables)
