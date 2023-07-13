@@ -87,7 +87,7 @@
       - `prefix(while:) tryPrefix(while:)` https://github.com/crazymanish/what-matters-most/pull/93
       - `prefix(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/93
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/87, https://github.com/crazymanish/what-matters-most/pull/88, https://github.com/crazymanish/what-matters-most/pull/89, https://github.com/crazymanish/what-matters-most/pull/90, https://github.com/crazymanish/what-matters-most/pull/91, https://github.com/crazymanish/what-matters-most/pull/92, https://github.com/crazymanish/what-matters-most/pull/93, https://github.com/crazymanish/what-matters-most/pull/94
-- [ ] Combining Operators
+- [x] Combining Operators
     - [x] Combining
       - `prepend(_:)` https://github.com/crazymanish/what-matters-most/pull/95
       - `prepend(Publisher)` https://github.com/crazymanish/what-matters-most/pull/96
@@ -96,7 +96,7 @@
       - `merge(with:)` https://github.com/crazymanish/what-matters-most/pull/99
       - `combineLatest(_:_:)` https://github.com/crazymanish/what-matters-most/pull/100
       - `zip(_:)` https://github.com/crazymanish/what-matters-most/pull/101
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/95, https://github.com/crazymanish/what-matters-most/pull/96, https://github.com/crazymanish/what-matters-most/pull/97, https://github.com/crazymanish/what-matters-most/pull/98, https://github.com/crazymanish/what-matters-most/pull/99, https://github.com/crazymanish/what-matters-most/pull/100, https://github.com/crazymanish/what-matters-most/pull/101, https://github.com/crazymanish/what-matters-most/pull/102
 - [ ] Time manipulation Operators
     - [ ] Shifting time
     - [ ] Collecting values
