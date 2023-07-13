@@ -92,7 +92,8 @@
       - `prepend(_:)` https://github.com/crazymanish/what-matters-most/pull/95
       - `prepend(Publisher)` https://github.com/crazymanish/what-matters-most/pull/96
       - `append(_:)` https://github.com/crazymanish/what-matters-most/pull/97
-      - `switchToLatest` https://github.com/crazymanish/what-matters-most/pull/98
+      - `switchToLatest()` https://github.com/crazymanish/what-matters-most/pull/98
+      - `merge(with:)` https://github.com/crazymanish/what-matters-most/pull/99
     - [ ] Practices
 - [ ] Time manipulation Operators
     - [ ] Shifting time
