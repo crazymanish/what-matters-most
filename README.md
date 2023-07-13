@@ -88,7 +88,8 @@
       - `prefix(untilOutputFrom:)` https://github.com/crazymanish/what-matters-most/pull/93
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/87, https://github.com/crazymanish/what-matters-most/pull/88, https://github.com/crazymanish/what-matters-most/pull/89, https://github.com/crazymanish/what-matters-most/pull/90, https://github.com/crazymanish/what-matters-most/pull/91, https://github.com/crazymanish/what-matters-most/pull/92, https://github.com/crazymanish/what-matters-most/pull/93, https://github.com/crazymanish/what-matters-most/pull/94
 - [ ] Combining Operators
-    - [ ] Combining
+    - [x] Combining
+      - `prepend(_:)` https://github.com/crazymanish/what-matters-most/pull/95
     - [ ] Practices
 - [ ] Time manipulation Operators
     - [ ] Shifting time
