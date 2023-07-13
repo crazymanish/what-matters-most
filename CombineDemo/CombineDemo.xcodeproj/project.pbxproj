@@ -53,6 +53,7 @@
 		96AC4A2E2A5FB47E00B2042E /* PrependingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */; };
 		96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */; };
 		96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */; };
+		96AC4A342A5FD35400B2042E /* MergeWithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A332A5FD35400B2042E /* MergeWithTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrependingTests.swift; sourceTree = "<group>"; };
 		96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendingTests.swift; sourceTree = "<group>"; };
 		96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestTests.swift; sourceTree = "<group>"; };
+		96AC4A332A5FD35400B2042E /* MergeWithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeWithTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */,
 				96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */,
 				96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */,
+				96AC4A332A5FD35400B2042E /* MergeWithTests.swift */,
 			);
 			path = CombiningOperators;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				9631D29529D7036200A9D790 /* DefaultValueTests.swift in Sources */,
 				967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */,
 				9642B76329D2130600CB89C8 /* CombineDemoTests.swift in Sources */,
+				96AC4A342A5FD35400B2042E /* MergeWithTests.swift in Sources */,
 				9631D1EB29D56B8600A9D790 /* DeferredTests.swift in Sources */,
 				96AC4A2E2A5FB47E00B2042E /* PrependingTests.swift in Sources */,
 				967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */,
