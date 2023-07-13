@@ -51,6 +51,7 @@
 		967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */; };
 		967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */; };
 		96AC4A2E2A5FB47E00B2042E /* PrependingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */; };
+		96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueSubjectTests.swift; sourceTree = "<group>"; };
 		967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceNilTests.swift; sourceTree = "<group>"; };
 		96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrependingTests.swift; sourceTree = "<group>"; };
+		96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */,
+				96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */,
 			);
 			path = CombiningOperators;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				9641203F2A5B38AF00A69216 /* LimitingValuesTests.swift in Sources */,
 				9667847F2A5B302E00398D70 /* DroppingValuesTests.swift in Sources */,
+				96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */,
 				9631D29929D70D6A00A9D790 /* DefaultErrorTests.swift in Sources */,
 				9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */,
 			);
