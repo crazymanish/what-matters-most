@@ -95,6 +95,7 @@
       - `switchToLatest()` https://github.com/crazymanish/what-matters-most/pull/98
       - `merge(with:)` https://github.com/crazymanish/what-matters-most/pull/99
       - `combineLatest(_:_:)` https://github.com/crazymanish/what-matters-most/pull/100
+      - `zip(_:)` https://github.com/crazymanish/what-matters-most/pull/101
     - [ ] Practices
 - [ ] Time manipulation Operators
     - [ ] Shifting time

@@ -55,6 +55,7 @@
 		96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */; };
 		96AC4A342A5FD35400B2042E /* MergeWithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A332A5FD35400B2042E /* MergeWithTests.swift */; };
 		96AC4A462A60081500B2042E /* CombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A452A60081500B2042E /* CombineLatestTests.swift */; };
+		96DACA1C2A6019F2004404AE /* ZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA1B2A6019F2004404AE /* ZipTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestTests.swift; sourceTree = "<group>"; };
 		96AC4A332A5FD35400B2042E /* MergeWithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeWithTests.swift; sourceTree = "<group>"; };
 		96AC4A452A60081500B2042E /* CombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestTests.swift; sourceTree = "<group>"; };
+		96DACA1B2A6019F2004404AE /* ZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +346,7 @@
 				96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */,
 				96AC4A332A5FD35400B2042E /* MergeWithTests.swift */,
 				96AC4A452A60081500B2042E /* CombineLatestTests.swift */,
+				96DACA1B2A6019F2004404AE /* ZipTests.swift */,
 			);
 			path = CombiningOperators;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
 				966784792A5B057F00398D70 /* CompactMapTests.swift in Sources */,
 				9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */,
+				96DACA1C2A6019F2004404AE /* ZipTests.swift in Sources */,
 				966784772A5B00AD00398D70 /* RemoveDuplicateTests.swift in Sources */,
 				9667847D2A5B27A800398D70 /* FindingValuesTests.swift in Sources */,
 				9612D6B52A5AFAD8007CBD1A /* FilterTests.swift in Sources */,
