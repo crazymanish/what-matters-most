@@ -41,7 +41,7 @@ final class MergeWithTests: XCTestCase {
 
         // When: Sink(Subscription)
         publisher1
-            .merge(with: publisher2, publisher3) // Switching to latest Publisher
+            .merge(with: publisher2, publisher3) // merging publisher2 and publisher3
             .sink { [weak self] completion in
             switch completion {
             case .finished:
