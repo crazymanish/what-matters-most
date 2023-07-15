@@ -57,6 +57,7 @@
 		96AC4A462A60081500B2042E /* CombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A452A60081500B2042E /* CombineLatestTests.swift */; };
 		96DACA1C2A6019F2004404AE /* ZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA1B2A6019F2004404AE /* ZipTests.swift */; };
 		96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */; };
+		96DACA612A631884004404AE /* CollectByTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA602A631884004404AE /* CollectByTimeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		96AC4A452A60081500B2042E /* CombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestTests.swift; sourceTree = "<group>"; };
 		96DACA1B2A6019F2004404AE /* ZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTests.swift; sourceTree = "<group>"; };
 		96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingTimeTests.swift; sourceTree = "<group>"; };
+		96DACA602A631884004404AE /* CollectByTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByTimeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */,
+				96DACA602A631884004404AE /* CollectByTimeTests.swift */,
 			);
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				9641203F2A5B38AF00A69216 /* LimitingValuesTests.swift in Sources */,
 				9667847F2A5B302E00398D70 /* DroppingValuesTests.swift in Sources */,
 				96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */,
+				96DACA612A631884004404AE /* CollectByTimeTests.swift in Sources */,
 				9631D29929D70D6A00A9D790 /* DefaultErrorTests.swift in Sources */,
 				9642B7F729D4C54600CB89C8 /* FailTests.swift in Sources */,
 			);

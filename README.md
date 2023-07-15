@@ -99,7 +99,7 @@
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/95, https://github.com/crazymanish/what-matters-most/pull/96, https://github.com/crazymanish/what-matters-most/pull/97, https://github.com/crazymanish/what-matters-most/pull/98, https://github.com/crazymanish/what-matters-most/pull/99, https://github.com/crazymanish/what-matters-most/pull/100, https://github.com/crazymanish/what-matters-most/pull/101, https://github.com/crazymanish/what-matters-most/pull/102
 - [ ] Time manipulation Operators
     - [x] Shifting time https://github.com/crazymanish/what-matters-most/pull/103
-    - [ ] Collecting values
+    - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/104
     - [ ] Holding off events
     - [ ] Timing out
     - [ ] Measuring time
