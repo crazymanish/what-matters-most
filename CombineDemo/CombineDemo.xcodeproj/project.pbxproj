@@ -56,6 +56,7 @@
 		96AC4A342A5FD35400B2042E /* MergeWithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A332A5FD35400B2042E /* MergeWithTests.swift */; };
 		96AC4A462A60081500B2042E /* CombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A452A60081500B2042E /* CombineLatestTests.swift */; };
 		96DACA1C2A6019F2004404AE /* ZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA1B2A6019F2004404AE /* ZipTests.swift */; };
+		96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		96AC4A332A5FD35400B2042E /* MergeWithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeWithTests.swift; sourceTree = "<group>"; };
 		96AC4A452A60081500B2042E /* CombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestTests.swift; sourceTree = "<group>"; };
 		96DACA1B2A6019F2004404AE /* ZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTests.swift; sourceTree = "<group>"; };
+		96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingTimeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			children = (
 				96AC4A2C2A5FB45100B2042E /* CombiningOperators */,
 				9612D6B32A5AFA46007CBD1A /* FilteringOperators */,
+				96DACA5D2A62D42A004404AE /* TimeManipulationOperators */,
 				96321F032A5AA2F500C60D8A /* TransformingOperators */,
 			);
 			path = Operators;
@@ -349,6 +352,14 @@
 				96DACA1B2A6019F2004404AE /* ZipTests.swift */,
 			);
 			path = CombiningOperators;
+			sourceTree = "<group>";
+		};
+		96DACA5D2A62D42A004404AE /* TimeManipulationOperators */ = {
+			isa = PBXGroup;
+			children = (
+				96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */,
+			);
+			path = TimeManipulationOperators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +539,7 @@
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
 				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
+				96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */,
 				9641203F2A5B38AF00A69216 /* LimitingValuesTests.swift in Sources */,
 				9667847F2A5B302E00398D70 /* DroppingValuesTests.swift in Sources */,
 				96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */,
