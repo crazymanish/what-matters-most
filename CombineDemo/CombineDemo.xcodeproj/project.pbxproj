@@ -60,6 +60,7 @@
 		96DACA612A631884004404AE /* CollectByTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA602A631884004404AE /* CollectByTimeTests.swift */; };
 		96DACA632A63F942004404AE /* DebounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA622A63F942004404AE /* DebounceTests.swift */; };
 		96DACA652A640249004404AE /* ThrottleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA642A640249004404AE /* ThrottleTests.swift */; };
+		96DACA672A640D37004404AE /* TimeoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA662A640D37004404AE /* TimeoutTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		96DACA602A631884004404AE /* CollectByTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByTimeTests.swift; sourceTree = "<group>"; };
 		96DACA622A63F942004404AE /* DebounceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceTests.swift; sourceTree = "<group>"; };
 		96DACA642A640249004404AE /* ThrottleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleTests.swift; sourceTree = "<group>"; };
+		96DACA662A640D37004404AE /* TimeoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 				96DACA602A631884004404AE /* CollectByTimeTests.swift */,
 				96DACA622A63F942004404AE /* DebounceTests.swift */,
 				96DACA642A640249004404AE /* ThrottleTests.swift */,
+				96DACA662A640D37004404AE /* TimeoutTests.swift */,
 			);
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				96321F052A5AA32200C60D8A /* CollectTests.swift in Sources */,
 				967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */,
 				9667847B2A5B09DC00398D70 /* IgnoreOutputTests.swift in Sources */,
+				96DACA672A640D37004404AE /* TimeoutTests.swift in Sources */,
 				9612D6B22A5AD0F9007CBD1A /* ScanTests.swift in Sources */,
 				96321F072A5AACA400C60D8A /* MapTests.swift in Sources */,
 				9642B7A529D365D100CB89C8 /* EmptyTests.swift in Sources */,
