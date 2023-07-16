@@ -97,7 +97,7 @@
       - `combineLatest(_:_:)` https://github.com/crazymanish/what-matters-most/pull/100
       - `zip(_:)` https://github.com/crazymanish/what-matters-most/pull/101
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/95, https://github.com/crazymanish/what-matters-most/pull/96, https://github.com/crazymanish/what-matters-most/pull/97, https://github.com/crazymanish/what-matters-most/pull/98, https://github.com/crazymanish/what-matters-most/pull/99, https://github.com/crazymanish/what-matters-most/pull/100, https://github.com/crazymanish/what-matters-most/pull/101, https://github.com/crazymanish/what-matters-most/pull/102
-- [ ] Time manipulation Operators
+- [x] Time manipulation Operators
     - [x] Shifting time https://github.com/crazymanish/what-matters-most/pull/103
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/104
     - [x] Holding off events
@@ -105,7 +105,7 @@
       - `throttle(for:scheduler:latest:)` https://github.com/crazymanish/what-matters-most/pull/106
     - [x] Timing out https://github.com/crazymanish/what-matters-most/pull/107
     - [x] Measuring time https://github.com/crazymanish/what-matters-most/pull/108
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/103, https://github.com/crazymanish/what-matters-most/pull/104, https://github.com/crazymanish/what-matters-most/pull/105, https://github.com/crazymanish/what-matters-most/pull/106, https://github.com/crazymanish/what-matters-most/pull/107, https://github.com/crazymanish/what-matters-most/pull/108, https://github.com/crazymanish/what-matters-most/pull/109
 - [ ] Sequence Operators
     - [ ] Finding values
     - [ ] Query the publisher
