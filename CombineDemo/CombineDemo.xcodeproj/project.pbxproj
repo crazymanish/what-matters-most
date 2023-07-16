@@ -58,6 +58,7 @@
 		96DACA1C2A6019F2004404AE /* ZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA1B2A6019F2004404AE /* ZipTests.swift */; };
 		96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */; };
 		96DACA612A631884004404AE /* CollectByTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA602A631884004404AE /* CollectByTimeTests.swift */; };
+		96DACA632A63F942004404AE /* DebounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA622A63F942004404AE /* DebounceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		96DACA1B2A6019F2004404AE /* ZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTests.swift; sourceTree = "<group>"; };
 		96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingTimeTests.swift; sourceTree = "<group>"; };
 		96DACA602A631884004404AE /* CollectByTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByTimeTests.swift; sourceTree = "<group>"; };
+		96DACA622A63F942004404AE /* DebounceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 			children = (
 				96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */,
 				96DACA602A631884004404AE /* CollectByTimeTests.swift */,
+				96DACA622A63F942004404AE /* DebounceTests.swift */,
 			);
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				9631D29E29DB503900A9D790 /* URLSessionTests.swift in Sources */,
 				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
 				9631D2A029DBC51600A9D790 /* UserDefaultTests.swift in Sources */,
+				96DACA632A63F942004404AE /* DebounceTests.swift in Sources */,
 				9631D2C429DD161500A9D790 /* URLSession+Decodable.swift in Sources */,
 				9631D28029D6242700A9D790 /* RecordTests.swift in Sources */,
 				96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */,

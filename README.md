@@ -100,7 +100,8 @@
 - [ ] Time manipulation Operators
     - [x] Shifting time https://github.com/crazymanish/what-matters-most/pull/103
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/104
-    - [ ] Holding off events
+    - [x] Holding off events
+      - `debounce(for:scheduler:options:)` https://github.com/crazymanish/what-matters-most/pull/105
     - [ ] Timing out
     - [ ] Measuring time
     - [ ] Practices
