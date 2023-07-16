@@ -59,6 +59,7 @@
 		96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */; };
 		96DACA612A631884004404AE /* CollectByTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA602A631884004404AE /* CollectByTimeTests.swift */; };
 		96DACA632A63F942004404AE /* DebounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA622A63F942004404AE /* DebounceTests.swift */; };
+		96DACA652A640249004404AE /* ThrottleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA642A640249004404AE /* ThrottleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingTimeTests.swift; sourceTree = "<group>"; };
 		96DACA602A631884004404AE /* CollectByTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectByTimeTests.swift; sourceTree = "<group>"; };
 		96DACA622A63F942004404AE /* DebounceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceTests.swift; sourceTree = "<group>"; };
+		96DACA642A640249004404AE /* ThrottleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 				96DACA5E2A630C5E004404AE /* ShiftingTimeTests.swift */,
 				96DACA602A631884004404AE /* CollectByTimeTests.swift */,
 				96DACA622A63F942004404AE /* DebounceTests.swift */,
+				96DACA642A640249004404AE /* ThrottleTests.swift */,
 			);
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
 				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
+				96DACA652A640249004404AE /* ThrottleTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */,
 				9641203F2A5B38AF00A69216 /* LimitingValuesTests.swift in Sources */,
