@@ -14,7 +14,7 @@ import XCTest
 /// - Use the debounce(for:scheduler:options:) operator to control the number of values and time between delivery of values from the upstream publisher.
 /// - This operator is useful to process bursty or high-volume event streams where you need to reduce the number of values delivered to the downstream to a rate you specify.
 ///
-/// - Example: For example, you may want to send a search URL request that returns a list of items matching what’s typed in the text field.
+/// - For example, you may want to send a search URL request that returns a list of items matching what’s typed in the text field.
 /// - But of course, you don’t want to send a request every time your user types a single letter! You need some kind of mechanism to help pick up on typed text only when the user is done typing for a while.
 /// - Combine offers two operators that can help you here: debounce and throttle.
 final class DebounceTests: XCTestCase {
@@ -53,7 +53,7 @@ final class DebounceTests: XCTestCase {
           ]
 
         let continuousPublisher = PassthroughSubject<String, Never>()
-        let debouncedPublisher = continuousPublisher.debounce(for: .seconds(1.0), scheduler: DispatchQueue.main)
+        let debouncedPublisher = continuousPublisher.debounce(for: .seconds(1.0), scheduler: DispatchQueue.main) // debounce will kick-in after one second pause of continuousPublisher
 
         var isContinuousPublisherFinishedCalled = false
         var receivedDebouncedValues: [String] = []
@@ -75,6 +75,7 @@ final class DebounceTests: XCTestCase {
                 self?.isFinishedCalled = true
             }
         } receiveValue: { value in
+            print("debouncedPublisher : \(value)")
             receivedDebouncedValues.append(value)
         }
         .store(in: &cancellables)
@@ -85,6 +86,26 @@ final class DebounceTests: XCTestCase {
                 continuousPublisher.send(value)
             }
         }
+
+        /*
+         +0.0s: continuousPublisher emitted: H
+         +0.1s: continuousPublisher emitted: He
+         +0.2s: continuousPublisher emitted: Hel
+         +0.3s: continuousPublisher emitted: Hell
+         +0.5s: continuousPublisher emitted: Hello
+         +0.6s: continuousPublisher emitted: Hello
+         +1.6s: debouncedPublisher emitted: Hello  // 👀
+         +2.1s: continuousPublisher emitted: Hello W
+         +2.1s: continuousPublisher emitted: Hello Wo
+         +2.4s: continuousPublisher emitted: Hello Wor
+         +2.4s: continuousPublisher emitted: Hello Worl
+         +2.7s: continuousPublisher emitted: Hello World
+         +3.7s: debouncedPublisher emitted: Hello World // 👀
+
+         As you can see, at 0.6 seconds the user pauses and resumes typing only at 2.1 seconds.
+         Meanwhile, you configured debounce to wait for a one-second pause. It obliges (at 1.6 seconds) and emits the latest received value.
+         Same around the end where typing ends at 2.7 seconds and debounce kicks in one second later at 3.7 seconds. Cool!
+         */
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             // Sending finished for continuousPublisher

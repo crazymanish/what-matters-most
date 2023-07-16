@@ -102,6 +102,7 @@
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/104
     - [x] Holding off events
       - `debounce(for:scheduler:options:)` https://github.com/crazymanish/what-matters-most/pull/105
+      - `throttle(for:scheduler:latest:)` https://github.com/crazymanish/what-matters-most/pull/106
     - [ ] Timing out
     - [ ] Measuring time
     - [ ] Practices
