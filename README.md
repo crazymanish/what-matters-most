@@ -103,7 +103,7 @@
     - [x] Holding off events
       - `debounce(for:scheduler:options:)` https://github.com/crazymanish/what-matters-most/pull/105
       - `throttle(for:scheduler:latest:)` https://github.com/crazymanish/what-matters-most/pull/106
-    - [ ] Timing out
+    - [x] Timing out https://github.com/crazymanish/what-matters-most/pull/107
     - [ ] Measuring time
     - [ ] Practices
 - [ ] Sequence Operators
