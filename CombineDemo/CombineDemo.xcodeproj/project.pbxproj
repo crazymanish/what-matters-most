@@ -61,6 +61,7 @@
 		96DACA632A63F942004404AE /* DebounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA622A63F942004404AE /* DebounceTests.swift */; };
 		96DACA652A640249004404AE /* ThrottleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA642A640249004404AE /* ThrottleTests.swift */; };
 		96DACA672A640D37004404AE /* TimeoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA662A640D37004404AE /* TimeoutTests.swift */; };
+		96DACA692A64190F004404AE /* MeasureTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA682A64190F004404AE /* MeasureTimeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		96DACA622A63F942004404AE /* DebounceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceTests.swift; sourceTree = "<group>"; };
 		96DACA642A640249004404AE /* ThrottleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleTests.swift; sourceTree = "<group>"; };
 		96DACA662A640D37004404AE /* TimeoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTests.swift; sourceTree = "<group>"; };
+		96DACA682A64190F004404AE /* MeasureTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTimeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +372,7 @@
 				96DACA622A63F942004404AE /* DebounceTests.swift */,
 				96DACA642A640249004404AE /* ThrottleTests.swift */,
 				96DACA662A640D37004404AE /* TimeoutTests.swift */,
+				96DACA682A64190F004404AE /* MeasureTimeTests.swift */,
 			);
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				9631D29E29DB503900A9D790 /* URLSessionTests.swift in Sources */,
 				9642B77E29D2149A00CB89C8 /* JustTests.swift in Sources */,
 				9631D2A029DBC51600A9D790 /* UserDefaultTests.swift in Sources */,
+				96DACA692A64190F004404AE /* MeasureTimeTests.swift in Sources */,
 				96DACA632A63F942004404AE /* DebounceTests.swift in Sources */,
 				9631D2C429DD161500A9D790 /* URLSession+Decodable.swift in Sources */,
 				9631D28029D6242700A9D790 /* RecordTests.swift in Sources */,

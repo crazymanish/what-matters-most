@@ -104,7 +104,7 @@
       - `debounce(for:scheduler:options:)` https://github.com/crazymanish/what-matters-most/pull/105
       - `throttle(for:scheduler:latest:)` https://github.com/crazymanish/what-matters-most/pull/106
     - [x] Timing out https://github.com/crazymanish/what-matters-most/pull/107
-    - [ ] Measuring time
+    - [x] Measuring time https://github.com/crazymanish/what-matters-most/pull/108
     - [ ] Practices
 - [ ] Sequence Operators
     - [ ] Finding values
