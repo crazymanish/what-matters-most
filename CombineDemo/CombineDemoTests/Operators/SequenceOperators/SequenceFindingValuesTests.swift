@@ -31,6 +31,9 @@ import XCTest
  - `max(by:)` Publishes the maximum value received from the upstream publisher, using the provided ordering closure.
  - A closure that receives two elements and returns true if they’re in increasing order.
  - https://developer.apple.com/documentation/combine/publishers/reduce/max(by:)
+
+ - `first()` Publishes the first element of a stream, then finishes.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/first()
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -160,5 +163,28 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, ["hello world"])
+    }
+
+    func testPublisherWithFirstOperator() {
+        // Given: Publisher
+        let publisher = [15, -1, 10, 5].publisher
+        var receivedValues: [Int] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .first() // `first()` publish just the first element from an upstream publisher, then finish normally.
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [15])
     }
 }
