@@ -38,6 +38,9 @@ import XCTest
  - `first(where:)` Publishes the first element of a stream to satisfy a predicate closure, then finishes normally.
  - A closure that takes an element as a parameter and returns a Boolean value that indicates whether to publish the element.
  - https://developer.apple.com/documentation/combine/publishers/reduce/first(where:)
+
+ - `last()` Publishes the last element of a stream, after the stream finishes.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/last()
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -213,5 +216,28 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [-1])
+    }
+
+    func testPublisherWithLastOperator() {
+        // Given: Publisher
+        let publisher = [15, -1, 10, 5].publisher
+        var receivedValues: [Int] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .last() // `last()` publish only the last element from an upstream publisher., then finish normally.
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [5])
     }
 }
