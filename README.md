@@ -109,6 +109,7 @@
 - [ ] Sequence Operators
     - [x] Finding values
       - `min()` https://github.com/crazymanish/what-matters-most/pull/110
+      - `min(by:)` https://github.com/crazymanish/what-matters-most/pull/111
     - [ ] Query the publisher
     - [ ] Practices
   
