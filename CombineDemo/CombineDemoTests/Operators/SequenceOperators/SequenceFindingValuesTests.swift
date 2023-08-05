@@ -24,6 +24,9 @@ import XCTest
  - `min(by:)` Publishes the minimum value received from the upstream publisher, after it finishes.
  - A closure that receives two elements and returns true if they’re in increasing order.
  - https://developer.apple.com/documentation/combine/publishers/reduce/min(by:)
+
+ - `max()` Publishes the maximum value received from the upstream publisher, after it finishes.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/max()
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -97,5 +100,28 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, ["ab"])
+    }
+
+    func testPublisherWithMaxOperator() {
+        // Given: Publisher
+        let publisher = [5, -1, 10, 5].publisher
+        var receivedValues: [Int] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .max() // Returns the maximum value, after upstream will finish!
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [10])
     }
 }
