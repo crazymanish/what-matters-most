@@ -20,6 +20,10 @@ import XCTest
 
  - `min()` Publishes the minimum value received from the upstream publisher, after it finishes.
  - https://developer.apple.com/documentation/combine/publishers/reduce/min()
+
+ - `min(by:)` Publishes the minimum value received from the upstream publisher, after it finishes.
+ - A closure that receives two elements and returns true if they’re in increasing order.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/min(by:)
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -60,5 +64,38 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [-1])
+    }
+
+    func testPublisherWithMinByOperator() {
+        // Given: Publisher
+        let publisher = [
+            "12345",
+            "ab",
+            "hello world"
+        ]
+            .compactMap { $0.data(using: .utf8) } // [Data]
+            .publisher // Publisher<Data, Never>
+
+        var receivedValues: [String] = []
+
+        // When: Sink(Subscription)
+        // Data doesn't conform to Comparable, that's why using the min(by:) operator to find the Data-object with the smallest number of bytes.
+        // The publisher emits all its Data objects and finishes, then min(by:) finds and emits the data with the smallest byte size and sink receives it.
+        publisher
+            .min(by: { $0.count < $1.count }) // Returns the minimum value (based on Data-bytes count), after upstream will finish!
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            let stringValue = String(data: value, encoding: .utf8)!
+            receivedValues.append(stringValue)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, ["ab"])
     }
 }
