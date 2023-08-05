@@ -27,6 +27,10 @@ import XCTest
 
  - `max()` Publishes the maximum value received from the upstream publisher, after it finishes.
  - https://developer.apple.com/documentation/combine/publishers/reduce/max()
+
+ - `max(by:)` Publishes the maximum value received from the upstream publisher, using the provided ordering closure.
+ - A closure that receives two elements and returns true if they’re in increasing order.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/max(by:)
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -123,5 +127,38 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [10])
+    }
+
+    func testPublisherWithMaxByOperator() {
+        // Given: Publisher
+        let publisher = [
+            "12345",
+            "ab",
+            "hello world"
+        ]
+            .compactMap { $0.data(using: .utf8) } // [Data]
+            .publisher // Publisher<Data, Never>
+
+        var receivedValues: [String] = []
+
+        // When: Sink(Subscription)
+        // Data doesn't conform to Comparable, that's why using the max(by:) operator to find the Data-object with the largest number of bytes.
+        // The publisher emits all its Data objects and finishes, then max(by:) finds and emits the data with the largest byte size and sink receives it.
+        publisher
+            .max(by: { $0.count < $1.count }) // Returns the maximum value (based on Data-bytes count), after upstream will finish!
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            let stringValue = String(data: value, encoding: .utf8)!
+            receivedValues.append(stringValue)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, ["hello world"])
     }
 }

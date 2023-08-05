@@ -111,6 +111,7 @@
       - `min()` https://github.com/crazymanish/what-matters-most/pull/110
       - `min(by:)` https://github.com/crazymanish/what-matters-most/pull/111
       - `max()` https://github.com/crazymanish/what-matters-most/pull/112
+      - `max(by:)` https://github.com/crazymanish/what-matters-most/pull/113
     - [ ] Query the publisher
     - [ ] Practices
   
