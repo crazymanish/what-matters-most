@@ -113,6 +113,7 @@
       - `max()` https://github.com/crazymanish/what-matters-most/pull/112
       - `max(by:)` https://github.com/crazymanish/what-matters-most/pull/113
       - `first()` https://github.com/crazymanish/what-matters-most/pull/114
+      - `first(where:)` https://github.com/crazymanish/what-matters-most/pull/115
     - [ ] Query the publisher
     - [ ] Practices
   
