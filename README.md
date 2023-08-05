@@ -107,7 +107,8 @@
     - [x] Measuring time https://github.com/crazymanish/what-matters-most/pull/108
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/103, https://github.com/crazymanish/what-matters-most/pull/104, https://github.com/crazymanish/what-matters-most/pull/105, https://github.com/crazymanish/what-matters-most/pull/106, https://github.com/crazymanish/what-matters-most/pull/107, https://github.com/crazymanish/what-matters-most/pull/108, https://github.com/crazymanish/what-matters-most/pull/109
 - [ ] Sequence Operators
-    - [ ] Finding values
+    - [x] Finding values
+      - `min()` https://github.com/crazymanish/what-matters-most/pull/110
     - [ ] Query the publisher
     - [ ] Practices
   
