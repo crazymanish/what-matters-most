@@ -106,7 +106,7 @@
     - [x] Timing out https://github.com/crazymanish/what-matters-most/pull/107
     - [x] Measuring time https://github.com/crazymanish/what-matters-most/pull/108
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/103, https://github.com/crazymanish/what-matters-most/pull/104, https://github.com/crazymanish/what-matters-most/pull/105, https://github.com/crazymanish/what-matters-most/pull/106, https://github.com/crazymanish/what-matters-most/pull/107, https://github.com/crazymanish/what-matters-most/pull/108, https://github.com/crazymanish/what-matters-most/pull/109
-- [ ] Sequence Operators
+- [x] Sequence Operators
     - [x] Finding values
       - `min()` https://github.com/crazymanish/what-matters-most/pull/110 `min(by:)` https://github.com/crazymanish/what-matters-most/pull/111
       - `max()` https://github.com/crazymanish/what-matters-most/pull/112 `max(by:)` https://github.com/crazymanish/what-matters-most/pull/113
@@ -118,7 +118,7 @@
       - `contains(_:)` https://github.com/crazymanish/what-matters-most/pull/121 `contains(where:)` https://github.com/crazymanish/what-matters-most/pull/122
       - `allSatisfy(_:)` https://github.com/crazymanish/what-matters-most/pull/123
       - `reduce(_:_:)` https://github.com/crazymanish/what-matters-most/pull/124 
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/110, https://github.com/crazymanish/what-matters-most/pull/111, https://github.com/crazymanish/what-matters-most/pull/112, https://github.com/crazymanish/what-matters-most/pull/113, https://github.com/crazymanish/what-matters-most/pull/114, https://github.com/crazymanish/what-matters-most/pull/115, https://github.com/crazymanish/what-matters-most/pull/116, https://github.com/crazymanish/what-matters-most/pull/117, https://github.com/crazymanish/what-matters-most/pull/118, https://github.com/crazymanish/what-matters-most/pull/119, https://github.com/crazymanish/what-matters-most/pull/120, https://github.com/crazymanish/what-matters-most/pull/121, https://github.com/crazymanish/what-matters-most/pull/122, https://github.com/crazymanish/what-matters-most/pull/123, https://github.com/crazymanish/what-matters-most/pull/124, https://github.com/crazymanish/what-matters-most/pull/125
   
   ------------------------------------------
   
