@@ -41,6 +41,10 @@ import XCTest
 
  - `last()` Publishes the last element of a stream, after the stream finishes.
  - https://developer.apple.com/documentation/combine/publishers/reduce/last()
+
+ - `last(where:)` Publishes the last element of a stream that satisfies a predicate closure, after upstream finishes.
+ - A closure that takes an element as its parameter and returns a Boolean value that indicates whether to publish the element.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/last(where:)
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -239,5 +243,28 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [5])
+    }
+
+    func testPublisherWithLastWhereOperator() {
+        // Given: Publisher
+        let publisher = [15, -1, -10, 10, 5].publisher
+        var receivedValues: [Int] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .last { $0 < 0 } // `last(where:)` publish only the last element of a stream that satisfies a predicate closure, after upstream finishes.
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [-10])
     }
 }
