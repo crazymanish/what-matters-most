@@ -108,13 +108,10 @@
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/103, https://github.com/crazymanish/what-matters-most/pull/104, https://github.com/crazymanish/what-matters-most/pull/105, https://github.com/crazymanish/what-matters-most/pull/106, https://github.com/crazymanish/what-matters-most/pull/107, https://github.com/crazymanish/what-matters-most/pull/108, https://github.com/crazymanish/what-matters-most/pull/109
 - [ ] Sequence Operators
     - [x] Finding values
-      - `min()` https://github.com/crazymanish/what-matters-most/pull/110
-      - `min(by:)` https://github.com/crazymanish/what-matters-most/pull/111
-      - `max()` https://github.com/crazymanish/what-matters-most/pull/112
-      - `max(by:)` https://github.com/crazymanish/what-matters-most/pull/113
-      - `first()` https://github.com/crazymanish/what-matters-most/pull/114
-      - `first(where:)` https://github.com/crazymanish/what-matters-most/pull/115
-      - `last()` https://github.com/crazymanish/what-matters-most/pull/116
+      - `min()` https://github.com/crazymanish/what-matters-most/pull/110 `min(by:)` https://github.com/crazymanish/what-matters-most/pull/111
+      - `max()` https://github.com/crazymanish/what-matters-most/pull/112 `max(by:)` https://github.com/crazymanish/what-matters-most/pull/113
+      - `first()` https://github.com/crazymanish/what-matters-most/pull/114 `first(where:)` https://github.com/crazymanish/what-matters-most/pull/115
+      - `last()` https://github.com/crazymanish/what-matters-most/pull/116 `last(where:)` https://github.com/crazymanish/what-matters-most/pull/117
     - [ ] Query the publisher
     - [ ] Practices
   
