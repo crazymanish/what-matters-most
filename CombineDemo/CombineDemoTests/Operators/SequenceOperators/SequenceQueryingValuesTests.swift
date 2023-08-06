@@ -30,6 +30,13 @@ import XCTest
  - Use contains(where:) to find the first element in an upstream that satisfies the closure you provide. This operator consumes elements produced from the upstream publisher until the upstream publisher produces a matching element.
  - This operator is useful when the upstream publisher produces elements that don’t conform to Equatable.
  - https://developer.apple.com/documentation/combine/publishers/reduce/contains(where:)
+
+ - `allSatisfy(_:)` Publishes a single Boolean value that indicates whether all received elements pass a given predicate.
+ - Param: A closure that evaluates each received element. Return true to continue, or false to cancel the upstream and complete.
+ - Use the allSatisfy(_:) operator to determine if all elements in a stream satisfy a criteria you provide.
+ - When this publisher receives an element, it runs the predicate against the element. If the predicate returns false, the publisher produces a false value and finishes.
+ - If the upstream publisher finishes normally, this publisher produces a true value and finishes.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/allsatisfy(_:)
  */
 final class SequenceQueryingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -105,6 +112,30 @@ final class SequenceQueryingValuesTests: XCTestCase {
         // When: Sink(Subscription)
         publisher
             .contains {$0 > 4} // emits true for the first elements that’s greater than 4, and then finishes normally.
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isFinishedCalled = true
+                }
+            } receiveValue: { value in
+                receivedValues.append(value)
+            }
+            .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [true])
+    }
+
+    func testPublisherWithAllSatisfyOperator() {
+        // Given: Publisher
+        let targetRange = (-1...100)
+        let publisher = [2, -1, 10, 5].publisher
+        var receivedValues: [Bool] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .allSatisfy { targetRange.contains($0) } // emits true if each an integer array publisher’s elements fall into the targetRange:
             .sink { [weak self] completion in
                 switch completion {
                 case .finished:
