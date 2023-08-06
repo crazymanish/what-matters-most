@@ -24,6 +24,12 @@ import XCTest
  - `contains(_:)` Publishes a Boolean value upon receiving an element equal to the argument.
  - The contains publisher consumes all received elements until the upstream publisher produces a matching element. Upon finding the first match, it emits true and finishes normally. If the upstream finishes normally without producing a matching element, this publisher emits false and finishes.
  - https://developer.apple.com/documentation/combine/publishers/reduce/contains(_:)
+
+ - `contains(where:)` Publishes a Boolean value upon receiving an element that satisfies the predicate closure.
+ - Param: A closure that takes an element as its parameter and returns a Boolean value that indicates whether the element satisfies the closure’s comparison logic.
+ - Use contains(where:) to find the first element in an upstream that satisfies the closure you provide. This operator consumes elements produced from the upstream publisher until the upstream publisher produces a matching element.
+ - This operator is useful when the upstream publisher produces elements that don’t conform to Equatable.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/contains(where:)
  */
 final class SequenceQueryingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -76,6 +82,29 @@ final class SequenceQueryingValuesTests: XCTestCase {
         // Once 10 is found, it cancels the subscription and doesn't produce any further values.
         publisher
             .contains(10) // Emits the Boolean value true when the upstream publisher emits a matching value (10).
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isFinishedCalled = true
+                }
+            } receiveValue: { value in
+                receivedValues.append(value)
+            }
+            .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [true])
+    }
+
+    func testPublisherWithContainsWhereOperator() {
+        // Given: Publisher
+        let publisher = [2, -1, 10, 5].publisher
+        var receivedValues: [Bool] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .contains {$0 > 4} // emits true for the first elements that’s greater than 4, and then finishes normally.
             .sink { [weak self] completion in
                 switch completion {
                 case .finished:
