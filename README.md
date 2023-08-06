@@ -115,7 +115,7 @@
       - `output(at:)` https://github.com/crazymanish/what-matters-most/pull/118 `output(in:)` https://github.com/crazymanish/what-matters-most/pull/119
     - [x] Query the publisher
       - `count()` https://github.com/crazymanish/what-matters-most/pull/120
-      - `contains(_:)` https://github.com/crazymanish/what-matters-most/pull/121
+      - `contains(_:)` https://github.com/crazymanish/what-matters-most/pull/121 `contains(where:)` https://github.com/crazymanish/what-matters-most/pull/122
     - [ ] Practices
   
   ------------------------------------------
