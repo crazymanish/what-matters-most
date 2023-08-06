@@ -49,6 +49,10 @@ import XCTest
  - `output(at:)` Publishes a specific element, indicated by its index in the sequence of published elements.
  - index param: The index that indicates the element to publish.
  - https://developer.apple.com/documentation/combine/publishers/reduce/output(at:)
+
+ - `output(in:)` Publishes elements specified by their range in the sequence of published elements.
+ - range param: A range that indicates which elements to publish.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/output(in:)
  */
 final class SequenceFindingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -293,5 +297,28 @@ final class SequenceFindingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [-10])
+    }
+
+    func testPublisherWithOutputInOperator() {
+        // Given: Publisher
+        let publisher = [15, -1, -10, 10, 5, 8].publisher
+        var receivedValues: [Int] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .output(in: 2...4) // Elements b/w 2nd to 4th index.
+            .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { value in
+            receivedValues.append(value)
+        }
+        .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [-10, 10, 5])
     }
 }
