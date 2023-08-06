@@ -20,6 +20,10 @@ import XCTest
 
  - `count()` Publishes the number of elements received from the upstream publisher.
  - https://developer.apple.com/documentation/combine/publishers/reduce/count()
+
+ - `contains(_:)` Publishes a Boolean value upon receiving an element equal to the argument.
+ - The contains publisher consumes all received elements until the upstream publisher produces a matching element. Upon finding the first match, it emits true and finishes normally. If the upstream finishes normally without producing a matching element, this publisher emits false and finishes.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/contains(_:)
  */
 final class SequenceQueryingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -39,7 +43,7 @@ final class SequenceQueryingValuesTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPublisherWithMinOperator() {
+    func testPublisherWithCountOperator() {
         // Given: Publisher
         let publisher = [15, -1, 10, 5].publisher
         var receivedValues: [Int] = []
@@ -60,5 +64,30 @@ final class SequenceQueryingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [4])
+    }
+
+    func testPublisherWithContainsOperator() {
+        // Given: Publisher
+        let publisher = [15, -1, 10, 5].publisher
+        var receivedValues: [Bool] = []
+
+        // When: Sink(Subscription)
+        // You might have also noticed contains is lazy, as it only consumes as many upstream values as it needs to perform its work.
+        // Once 10 is found, it cancels the subscription and doesn't produce any further values.
+        publisher
+            .contains(10) // Emits the Boolean value true when the upstream publisher emits a matching value (10).
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isFinishedCalled = true
+                }
+            } receiveValue: { value in
+                receivedValues.append(value)
+            }
+            .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, [true])
     }
 }
