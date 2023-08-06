@@ -37,6 +37,12 @@ import XCTest
  - When this publisher receives an element, it runs the predicate against the element. If the predicate returns false, the publisher produces a false value and finishes.
  - If the upstream publisher finishes normally, this publisher produces a true value and finishes.
  - https://developer.apple.com/documentation/combine/publishers/reduce/allsatisfy(_:)
+
+ - `reduce(_:_:)` Applies a closure that collects each element of a stream and publishes a final result upon completion.
+ - Param: initialResult:: The value that the closure receives the first time it’s called.
+ - Param: nextPartialResult:: A closure that produces a new value by taking the previously-accumulated value and the next element it receives from the upstream publisher.
+ - Use reduce(_:_:) to collect a stream of elements and produce an accumulated value based on a closure you provide.
+ - https://developer.apple.com/documentation/combine/publishers/reduce/reduce(_:_:)
  */
 final class SequenceQueryingValuesTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -149,5 +155,30 @@ final class SequenceQueryingValuesTests: XCTestCase {
         // Then: Receiving correct value
         XCTAssertTrue(isFinishedCalled)
         XCTAssertEqual(receivedValues, [true])
+    }
+
+    func testPublisherWithReduceOperator() {
+        // Given: Publisher
+        let publisher = ["Hel", "lo", " ", "Wor", "ld", "!"].publisher
+        var receivedValues: [String] = []
+
+        // When: Sink(Subscription)
+        publisher
+            .reduce("This is ") { accumulator, value in // collects all the string values it receives from its upstream publisher
+                accumulator+value
+            }
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isFinishedCalled = true
+                }
+            } receiveValue: { value in
+                receivedValues.append(value)
+            }
+            .store(in: &cancellables)
+
+        // Then: Receiving correct value
+        XCTAssertTrue(isFinishedCalled)
+        XCTAssertEqual(receivedValues, ["This is Hello World!"])
     }
 }
