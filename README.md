@@ -1,7 +1,7 @@
 ## Combine framework
 --------------------------------------------
 
-  **Books**
+#### Books
 
 - [x] Combine: Asynchronous Programming with Swift
     - [x] Book: https://www.kodeco.com/books/combine-asynchronous-programming-with-swift
@@ -16,7 +16,7 @@
     - [x] GitHub: https://github.com/WWDCNotes/Content 
     
 -------------------------------------------
-**Section1: Introduction**
+#### Section1: Introduction
 
 - [x] Publisher
     - [x] Read about publisher https://github.com/crazymanish/what-matters-most/pull/58
@@ -55,7 +55,7 @@
   
   ------------------------------------------
   
-  **Section2: Operators**
+#### Section2: Operators
 
 - [x] Transforming Operators
     - [x] Collecting values https://github.com/crazymanish/what-matters-most/pull/78
@@ -122,7 +122,7 @@
   
   ------------------------------------------
   
-  **Section3: Combine in action**
+#### Section3: Combine in action
 
 - [ ] Networking
     - [ ] URLSession extensions
@@ -153,7 +153,7 @@
 
   ------------------------------------------
   
-  **Section4: Production code**
+#### Section4: Production code
 
 - [ ] Complete app
     - [ ] Build app
@@ -161,4 +161,4 @@
 
 --------------------------------------------
 
-  **Start SwiftUI framework**
+#### Start SwiftUI framework
