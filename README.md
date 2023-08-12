@@ -126,7 +126,7 @@
 
 - [ ] Networking
     - [x] URLSession extensions https://github.com/crazymanish/what-matters-most/pull/126
-    - [ ] Codable support
+    - [x] Codable support https://github.com/crazymanish/what-matters-most/pull/127
     - [ ] Publishing network data
     - [ ] Practices
 - [ ] Debugging
