@@ -128,7 +128,7 @@
     - [x] URLSession extensions https://github.com/crazymanish/what-matters-most/pull/126
     - [x] Codable support https://github.com/crazymanish/what-matters-most/pull/127
     - [x] Publishing network data https://github.com/crazymanish/what-matters-most/pull/128
-    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/126, https://github.com/crazymanish/what-matters-most/pull/127, https://github.com/crazymanish/what-matters-most/pull/128
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/126, https://github.com/crazymanish/what-matters-most/pull/127, https://github.com/crazymanish/what-matters-most/pull/128, https://github.com/crazymanish/what-matters-most/pull/129
 - [ ] Debugging
     - [ ] Printing events
     - [ ] Acting on events
