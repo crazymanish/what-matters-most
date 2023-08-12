@@ -125,7 +125,7 @@
 #### Section3: Combine in action
 
 - [ ] Networking
-    - [ ] URLSession extensions
+    - [x] URLSession extensions https://github.com/crazymanish/what-matters-most/pull/126
     - [ ] Codable support
     - [ ] Publishing network data
     - [ ] Practices
