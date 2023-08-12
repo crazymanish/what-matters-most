@@ -119,4 +119,89 @@ final class NetworkingTests: XCTestCase {
 
         wait(for: [expectation], timeout: 10.0)
     }
+
+    func testURLSessionPublisherWithMultipleSubscribers() {
+        let expectation = XCTestExpectation(description: "Fetching GitHub user info")
+
+        let apiURL = URL(string: "https://api.github.com/users/crazymanish")
+        let publisher = urlSession
+            .dataTaskPublisher(for: apiURL!)
+            .map(\.data)
+            .multicast {
+                PassthroughSubject<Data, URLError>()
+            }
+
+        let publisher1 = publisher
+            .decode(type: GitHubUser.self, decoder: JSONDecoder())
+        let publisher2 = publisher
+            .decode(type: GitHubUser.self, decoder: JSONDecoder())
+
+        // Subscription1
+        publisher1
+            .sink { [weak self] completion in
+            guard let self else { return }
+
+            switch completion {
+            case .finished:
+                self.isFinishedCalled = true
+            case .failure(let error):
+                self.receivedError = error
+            }
+
+            XCTAssertTrue(self.isFinishedCalled)
+            XCTAssertNil(self.receivedError)
+        } receiveValue: { gitHubUser in
+            XCTAssertEqual(gitHubUser.login, "crazymanish")
+            XCTAssertEqual(gitHubUser.name, "Manish Rathi")
+
+            print("CAME here")
+        }
+        .store(in: &cancellables)
+
+        // Subscription2
+        publisher2
+            .sink { [weak self] completion in
+            guard let self else { return }
+
+            switch completion {
+            case .finished:
+                self.isFinishedCalled = true
+            case .failure(let error):
+                self.receivedError = error
+            }
+
+            XCTAssertTrue(self.isFinishedCalled)
+            XCTAssertNil(self.receivedError)
+        } receiveValue: { gitHubUser in
+            XCTAssertEqual(gitHubUser.login, "crazymanish")
+            XCTAssertEqual(gitHubUser.name, "Manish Rathi")
+
+            print("CAME here too")
+        }
+        .store(in: &cancellables)
+
+        // Ensuring that both both publishers received the correct values
+        publisher1
+            .zip(publisher2)
+            .sink(receiveCompletion: { [weak self] _ in
+                self?.isFinishedCalled = true
+            }, receiveValue: { gitHubUser1, gitHubUser2 in
+                XCTAssertEqual(gitHubUser1.login, "crazymanish")
+                XCTAssertEqual(gitHubUser1.name, "Manish Rathi")
+
+                XCTAssertEqual(gitHubUser2.login, "crazymanish")
+                XCTAssertEqual(gitHubUser2.name, "Manish Rathi")
+
+                print("CAME here too too")
+                expectation.fulfill()
+            })
+            .store(in: &cancellables)
+
+        // Connect the publisher, when we are ready. It will start working and pushing values to all of its subscribers.
+        publisher
+            .connect()
+            .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 10.0)
+    }
 }
