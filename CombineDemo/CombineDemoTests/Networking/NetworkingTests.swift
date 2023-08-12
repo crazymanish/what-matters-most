@@ -61,4 +61,62 @@ final class NetworkingTests: XCTestCase {
 
         wait(for: [expectation], timeout: 10.0)
     }
+
+    func testURLSessionPublisherWithCodable() {
+        let expectation = XCTestExpectation(description: "Fetching GitHub user info")
+
+        publisher
+            .tryMap { data, _ in
+                try JSONDecoder().decode(GitHubUser.self, from: data)
+            }
+            .sink { [weak self] completion in
+            guard let self else { return }
+
+            switch completion {
+            case .finished:
+                self.isFinishedCalled = true
+            case .failure(let error):
+                self.receivedError = error
+            }
+
+            XCTAssertTrue(self.isFinishedCalled)
+            XCTAssertNil(self.receivedError)
+            expectation.fulfill()
+        } receiveValue: { gitHubUser in
+            XCTAssertEqual(gitHubUser.login, "crazymanish")
+            XCTAssertEqual(gitHubUser.name, "Manish Rathi")
+        }
+        .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testURLSessionPublisherWithCodableWithAnotherWay() {
+        let expectation = XCTestExpectation(description: "Fetching GitHub user info")
+
+        // The only advantage is that you instantiate the JSONDecoder only once, when setting up the publisher, v/s creating it every time in the tryMap(_:) closure.
+        publisher
+            .map(\.data)
+            .decode(type: GitHubUser.self, decoder: JSONDecoder())
+            .sink { [weak self] completion in
+            guard let self else { return }
+
+            switch completion {
+            case .finished:
+                self.isFinishedCalled = true
+            case .failure(let error):
+                self.receivedError = error
+            }
+
+            XCTAssertTrue(self.isFinishedCalled)
+            XCTAssertNil(self.receivedError)
+            expectation.fulfill()
+        } receiveValue: { gitHubUser in
+            XCTAssertEqual(gitHubUser.login, "crazymanish")
+            XCTAssertEqual(gitHubUser.name, "Manish Rathi")
+        }
+        .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 10.0)
+    }
 }
