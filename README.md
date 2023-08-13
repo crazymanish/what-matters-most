@@ -131,7 +131,7 @@
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/126, https://github.com/crazymanish/what-matters-most/pull/127, https://github.com/crazymanish/what-matters-most/pull/128, https://github.com/crazymanish/what-matters-most/pull/129
 - [ ] Debugging
     - [x] Printing events https://github.com/crazymanish/what-matters-most/pull/130
-    - [ ] Acting on events
+    - [x] Acting on events https://github.com/crazymanish/what-matters-most/pull/131
     - [ ] Using debugger
     - [ ] Practices
 - [ ] Error Handling
