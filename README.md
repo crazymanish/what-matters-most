@@ -129,11 +129,11 @@
     - [x] Codable support https://github.com/crazymanish/what-matters-most/pull/127
     - [x] Publishing network data https://github.com/crazymanish/what-matters-most/pull/128
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/126, https://github.com/crazymanish/what-matters-most/pull/127, https://github.com/crazymanish/what-matters-most/pull/128, https://github.com/crazymanish/what-matters-most/pull/129
-- [ ] Debugging
+- [x] Debugging
     - [x] Printing events https://github.com/crazymanish/what-matters-most/pull/130
     - [x] Acting on events https://github.com/crazymanish/what-matters-most/pull/131
     - [x] Using Breakpoint debugger https://github.com/crazymanish/what-matters-most/pull/132
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/130, https://github.com/crazymanish/what-matters-most/pull/131, https://github.com/crazymanish/what-matters-most/pull/132, https://github.com/crazymanish/what-matters-most/pull/133
 - [ ] Error Handling
     - [ ] Never
     - [ ] Dealing with failure
