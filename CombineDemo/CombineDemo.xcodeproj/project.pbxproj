@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9609A73A2A87F6DC00383991 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609A7392A87F6DC00383991 /* NetworkingTests.swift */; };
 		9609A73D2A891B1700383991 /* PrintingEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609A73C2A891B1700383991 /* PrintingEventsTests.swift */; };
+		9609A73F2A8923E800383991 /* HandlingEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609A73E2A8923E800383991 /* HandlingEventsTests.swift */; };
 		9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */; };
 		9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9612D6AF2A5ACE06007CBD1A /* ReplaceEmptyTests.swift */; };
 		9612D6B22A5AD0F9007CBD1A /* ScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9612D6B12A5AD0F9007CBD1A /* ScanTests.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		9609A7392A87F6DC00383991 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		9609A73C2A891B1700383991 /* PrintingEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingEventsTests.swift; sourceTree = "<group>"; };
+		9609A73E2A8923E800383991 /* HandlingEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingEventsTests.swift; sourceTree = "<group>"; };
 		9609DCF32A5AB7E500A3B065 /* TryMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryMapTests.swift; sourceTree = "<group>"; };
 		9612D6AF2A5ACE06007CBD1A /* ReplaceEmptyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceEmptyTests.swift; sourceTree = "<group>"; };
 		9612D6B12A5AD0F9007CBD1A /* ScanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTests.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				9609A73C2A891B1700383991 /* PrintingEventsTests.swift */,
+				9609A73E2A8923E800383991 /* HandlingEventsTests.swift */,
 			);
 			path = Debugging;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */,
 				9642B78029D2876200CB89C8 /* FutureTests.swift in Sources */,
 				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
+				9609A73F2A8923E800383991 /* HandlingEventsTests.swift in Sources */,
 				96DACA652A640249004404AE /* ThrottleTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */,
