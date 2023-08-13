@@ -132,7 +132,7 @@
 - [ ] Debugging
     - [x] Printing events https://github.com/crazymanish/what-matters-most/pull/130
     - [x] Acting on events https://github.com/crazymanish/what-matters-most/pull/131
-    - [ ] Using debugger
+    - [x] Using Breakpoint debugger https://github.com/crazymanish/what-matters-most/pull/132
     - [ ] Practices
 - [ ] Error Handling
     - [ ] Never
