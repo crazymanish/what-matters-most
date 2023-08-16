@@ -134,13 +134,13 @@
     - [x] Acting on events https://github.com/crazymanish/what-matters-most/pull/131
     - [x] Using Breakpoint debugger https://github.com/crazymanish/what-matters-most/pull/132
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/130, https://github.com/crazymanish/what-matters-most/pull/131, https://github.com/crazymanish/what-matters-most/pull/132, https://github.com/crazymanish/what-matters-most/pull/133
-- [ ] Error Handling
+- [x] Error Handling
     - [x] Never https://github.com/crazymanish/what-matters-most/pull/134
     - [x] Dealing with failure https://github.com/crazymanish/what-matters-most/pull/135
       - `try-prefixed operators i.e tryMap`
       - `mapError(_:)`
       - `replaceError(with:)`
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/134, https://github.com/crazymanish/what-matters-most/pull/135, https://github.com/crazymanish/what-matters-most/pull/136
 - [ ] Schedulers
     - [ ] Operators for scheduling
     - [ ] Practices
