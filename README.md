@@ -135,7 +135,7 @@
     - [x] Using Breakpoint debugger https://github.com/crazymanish/what-matters-most/pull/132
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/130, https://github.com/crazymanish/what-matters-most/pull/131, https://github.com/crazymanish/what-matters-most/pull/132, https://github.com/crazymanish/what-matters-most/pull/133
 - [ ] Error Handling
-    - [ ] Never
+    - [x] Never https://github.com/crazymanish/what-matters-most/pull/134
     - [ ] Dealing with failure
     - [ ] Practices
 - [ ] Schedulers
