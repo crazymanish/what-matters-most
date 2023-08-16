@@ -136,7 +136,10 @@
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/130, https://github.com/crazymanish/what-matters-most/pull/131, https://github.com/crazymanish/what-matters-most/pull/132, https://github.com/crazymanish/what-matters-most/pull/133
 - [ ] Error Handling
     - [x] Never https://github.com/crazymanish/what-matters-most/pull/134
-    - [ ] Dealing with failure
+    - [x] Dealing with failure https://github.com/crazymanish/what-matters-most/pull/135
+      - `try-prefixed operators i.e tryMap`
+      - `mapError(_:)`
+      - `replaceError(with:)`
     - [ ] Practices
 - [ ] Schedulers
     - [ ] Operators for scheduling
