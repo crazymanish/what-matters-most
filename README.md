@@ -142,7 +142,9 @@
       - `replaceError(with:)`
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/134, https://github.com/crazymanish/what-matters-most/pull/135, https://github.com/crazymanish/what-matters-most/pull/136
 - [ ] Schedulers
-    - [ ] Operators for scheduling
+    - [x] Operators for scheduling https://github.com/crazymanish/what-matters-most/pull/137
+      - `subscribe(on:)` and `subscribe(on:options:)`
+      - `receive(on:)` and `receive(on:options:)`
     - [ ] Practices
 - [ ] Timers
     - [ ] Using RunLoop
