@@ -145,6 +145,8 @@
     - [x] Operators for scheduling https://github.com/crazymanish/what-matters-most/pull/137
       - `subscribe(on:)` and `subscribe(on:options:)`
       - `receive(on:)` and `receive(on:options:)`
+    - [x] Scheduler implementations
+      - `ImmediateScheduler` https://github.com/crazymanish/what-matters-most/pull/138
     - [ ] Practices
 - [ ] Timers
     - [ ] Using RunLoop
