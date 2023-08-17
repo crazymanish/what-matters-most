@@ -141,14 +141,14 @@
       - `mapError(_:)`
       - `replaceError(with:)`
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/134, https://github.com/crazymanish/what-matters-most/pull/135, https://github.com/crazymanish/what-matters-most/pull/136
-- [ ] Schedulers
+- [x] Schedulers
     - [x] Operators for scheduling https://github.com/crazymanish/what-matters-most/pull/137
       - `subscribe(on:)` and `subscribe(on:options:)`
       - `receive(on:)` and `receive(on:options:)`
     - [x] Scheduler implementations
       - `ImmediateScheduler` https://github.com/crazymanish/what-matters-most/pull/138
       - `RunLoop` `DispatchQueue` `OperationQueue` https://github.com/crazymanish/what-matters-most/pull/139
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/137, https://github.com/crazymanish/what-matters-most/pull/138, https://github.com/crazymanish/what-matters-most/pull/139, https://github.com/crazymanish/what-matters-most/pull/140
 - [ ] Timers
     - [ ] Using RunLoop
     - [ ] Using Timer class
