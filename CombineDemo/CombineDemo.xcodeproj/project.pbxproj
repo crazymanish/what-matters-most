@@ -58,6 +58,7 @@
 		967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */; };
 		967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */; };
 		967C6CB62A5AC96300461FF3 /* ReplaceNilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */; };
+		96A3B1562A8E7BCC00CDD372 /* SchedulerImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3B1552A8E7BCC00CDD372 /* SchedulerImplementationTests.swift */; };
 		96AC4A2E2A5FB47E00B2042E /* PrependingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */; };
 		96AC4A302A5FC02600B2042E /* AppendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */; };
 		96AC4A322A5FC44000B2042E /* SwitchToLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */; };
@@ -146,6 +147,7 @@
 		967AF3A82A485C3100AB60CA /* PassthroughSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectTests.swift; sourceTree = "<group>"; };
 		967AF4B82A526E0600AB60CA /* CurrentValueSubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueSubjectTests.swift; sourceTree = "<group>"; };
 		967C6CB52A5AC96300461FF3 /* ReplaceNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceNilTests.swift; sourceTree = "<group>"; };
+		96A3B1552A8E7BCC00CDD372 /* SchedulerImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerImplementationTests.swift; sourceTree = "<group>"; };
 		96AC4A2D2A5FB47E00B2042E /* PrependingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrependingTests.swift; sourceTree = "<group>"; };
 		96AC4A2F2A5FC02600B2042E /* AppendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendingTests.swift; sourceTree = "<group>"; };
 		96AC4A312A5FC44000B2042E /* SwitchToLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLatestTests.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				965D33E22A8E36C700554D1D /* SchedulerTests.swift */,
+				96A3B1552A8E7BCC00CDD372 /* SchedulerImplementationTests.swift */,
 			);
 			path = Scheduler;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				9631D29C29DA736200A9D790 /* NotificationTests.swift in Sources */,
 				96AC4A462A60081500B2042E /* CombineLatestTests.swift in Sources */,
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
+				96A3B1562A8E7BCC00CDD372 /* SchedulerImplementationTests.swift in Sources */,
 				966784792A5B057F00398D70 /* CompactMapTests.swift in Sources */,
 				9609DCF42A5AB7E500A3B065 /* TryMapTests.swift in Sources */,
 				96B40BD02A7E653A001D06AF /* SequenceFindingValuesTests.swift in Sources */,
