@@ -150,7 +150,7 @@
       - `RunLoop` `DispatchQueue` `OperationQueue` https://github.com/crazymanish/what-matters-most/pull/139
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/137, https://github.com/crazymanish/what-matters-most/pull/138, https://github.com/crazymanish/what-matters-most/pull/139, https://github.com/crazymanish/what-matters-most/pull/140
 - [ ] Timers
-    - [ ] Using RunLoop
+    - [x] Using RunLoop https://github.com/crazymanish/what-matters-most/pull/141
     - [ ] Using Timer class
     - [ ] Using DispatchQueue
     - [ ] Practices
