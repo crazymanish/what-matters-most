@@ -149,11 +149,11 @@
       - `ImmediateScheduler` https://github.com/crazymanish/what-matters-most/pull/138
       - `RunLoop` `DispatchQueue` `OperationQueue` https://github.com/crazymanish/what-matters-most/pull/139
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/137, https://github.com/crazymanish/what-matters-most/pull/138, https://github.com/crazymanish/what-matters-most/pull/139, https://github.com/crazymanish/what-matters-most/pull/140
-- [ ] Timers
+- [x] Timers
     - [x] Using RunLoop https://github.com/crazymanish/what-matters-most/pull/141
     - [x] Using Timer class https://github.com/crazymanish/what-matters-most/pull/142
     - [x] Using DispatchQueue https://github.com/crazymanish/what-matters-most/pull/143
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/141, https://github.com/crazymanish/what-matters-most/pull/142, https://github.com/crazymanish/what-matters-most/pull/143, https://github.com/crazymanish/what-matters-most/pull/144
 - [ ] Key-value Observing
     - [ ] KVO introduction
     - [ ] ObservableObject
