@@ -121,9 +121,9 @@ final class SchedulerTests: XCTestCase {
             } receiveValue: { [weak self] value in
                 let thread = Thread.current.number
                 print("Received computation result on thread \(thread): '\(value)'")
-                XCTAssertEqual(currentThread, 1)
+                XCTAssertNotEqual(thread, 1) // 1 mean Main-Thread, it should not be 1 because we are using background queue
 
-                DispatchQueue.main.async { // We need to update UI, because code were switched to background thread using in `subscribe(on: queue)` step (see below for better alternative)
+                DispatchQueue.main.async { // We need this switch to update UI, because code were switched to background thread using in `subscribe(on: queue)` step (see below for better alternative)
                     self?.receivedValues?.append(value)
                 }
             }
@@ -162,7 +162,7 @@ final class SchedulerTests: XCTestCase {
             } receiveValue: { [weak self] value in
                 let thread = Thread.current.number
                 print("Received computation result on thread \(thread): '\(value)'")
-                XCTAssertEqual(currentThread, 1)
+                XCTAssertEqual(thread, 1) // 1 mean Main-Thread
 
                 self?.receivedValues?.append(value) // No need `DispatchQueue.main.async` thanks to `.receive(on: DispatchQueue.main)` step
             }
