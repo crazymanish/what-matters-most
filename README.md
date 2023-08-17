@@ -152,7 +152,7 @@
 - [ ] Timers
     - [x] Using RunLoop https://github.com/crazymanish/what-matters-most/pull/141
     - [x] Using Timer class https://github.com/crazymanish/what-matters-most/pull/142
-    - [ ] Using DispatchQueue
+    - [x] Using DispatchQueue https://github.com/crazymanish/what-matters-most/pull/143
     - [ ] Practices
 - [ ] Key-value Observing
     - [ ] KVO introduction

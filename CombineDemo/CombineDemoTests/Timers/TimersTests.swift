@@ -25,6 +25,10 @@ import XCTest
 - Timer is the oldest timer that was available on the original Mac OS X, long before it was renamed “macOS.”
 - It has always been tricky to use because of its delegation pattern and tight relationship with RunLoop.
 - Combine brings a modern variant you can directly use as a publisher without all the setup boilerplate.
+----------
+- Using DispatchQueue
+- You can use a dispatch queue to generate timer events.
+- While the Dispatch framework has a DispatchTimerSource event source, Combine surprisingly doesn’t provide a timer interface to it. Instead, you’re going to use an alternative method to generate timer events in your queue.
  */
 final class TimersTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
@@ -60,7 +64,7 @@ final class TimersTests: XCTestCase {
 
         // Its ONLY USEFULNESS in relation to Combine is that the Cancellable it returns lets you stop the timer after a while.
         runLoop.schedule(after: .init(Date(timeIntervalSinceNow: 3.0))) { [weak self] in
-            self?.cancellables.first?.cancel()
+            self?.cancellables.first?.cancel() // Cancelling Timer after 3 seconds
 
             XCTAssertEqual(self?.receivedValues, ["Timer fired", "Timer fired", "Timer fired", "Timer fired"])
 
@@ -90,7 +94,40 @@ final class TimersTests: XCTestCase {
             }
             .store(in: &cancellables)
 
+        // Cancelling Timer after 3 seconds
+        RunLoop.main.schedule(after: .init(Date(timeIntervalSinceNow: 3.0))) { [weak self] in
+            self?.cancellables.first?.cancel()
 
+            XCTAssertEqual(self?.receivedValues, ["Timer fired", "Timer fired", "Timer fired"])
+
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testDispatchQueueTimer() {
+        let expectation = XCTestExpectation(description: "DispatchQueue based timer")
+
+        // While the Dispatch framework has a DispatchTimerSource event source, Combine surprisingly doesn’t provide a timer interface to it.
+        // Instead, you’re going to use an alternative method to generate timer events in your queue.
+
+        // Create a Subject you will send timer values to.
+        let publisher = PassthroughSubject<Void, Never>()
+
+        let queue = DispatchQueue.main
+        queue.schedule(after: queue.now, interval: .seconds(1)) {
+            publisher.send(())
+        }
+        .store(in: &cancellables)
+
+        publisher
+            .sink { [weak self] value in
+                self?.receivedValues?.append("Timer fired")
+            }
+            .store(in: &cancellables)
+
+        // Cancelling Timer after 3 seconds
         RunLoop.main.schedule(after: .init(Date(timeIntervalSinceNow: 3.0))) { [weak self] in
             self?.cancellables.first?.cancel()
 
