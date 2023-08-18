@@ -154,10 +154,10 @@
     - [x] Using Timer class https://github.com/crazymanish/what-matters-most/pull/142
     - [x] Using DispatchQueue https://github.com/crazymanish/what-matters-most/pull/143
     - [x] Practices https://github.com/crazymanish/what-matters-most/pull/141, https://github.com/crazymanish/what-matters-most/pull/142, https://github.com/crazymanish/what-matters-most/pull/143, https://github.com/crazymanish/what-matters-most/pull/144
-- [ ] Key-value Observing
+- [x] Key-value Observing
     - [x] KVO introduction https://github.com/crazymanish/what-matters-most/pull/145
     - [x] ObservableObject https://github.com/crazymanish/what-matters-most/pull/146
-    - [ ] Practices
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/147
 
   ------------------------------------------
   
