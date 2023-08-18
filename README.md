@@ -157,7 +157,7 @@
 - [x] Key-value Observing
     - [x] KVO introduction https://github.com/crazymanish/what-matters-most/pull/145
     - [x] ObservableObject https://github.com/crazymanish/what-matters-most/pull/146
-    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/147
+    - [x] Practices https://github.com/crazymanish/what-matters-most/pull/145, https://github.com/crazymanish/what-matters-most/pull/146, https://github.com/crazymanish/what-matters-most/pull/147
 
   ------------------------------------------
   
