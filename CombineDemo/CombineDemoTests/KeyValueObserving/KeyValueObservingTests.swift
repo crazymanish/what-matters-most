@@ -19,23 +19,27 @@ import XCTest
 - https://developer.apple.com/documentation/combine/performing-key-value-observing-with-combine
 - This is mostly for ObjectiveC because Swift language doesn’t directly support KVO, marking your properties `@objc dynamic` forces the compiler to generate hidden methods that trigger the KVO machinery.
 ----------
+- `ObservableObject` A type of object with a publisher that emits before the object has changed.
+- https://developer.apple.com/documentation/combine/observableobject
+- By default an ObservableObject synthesizes an objectWillChange publisher that emits the changed value before any of its @Published properties changes.
 */
 final class KeyValueObservingTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
     var isFinishedCalled: Bool!
-    var receivedValue: String?
+    var receivedValues: [String]?
 
     override func setUp() {
         super.setUp()
 
         cancellables = []
+        receivedValues = []
         isFinishedCalled =  false
     }
 
     override func tearDown() {
         cancellables = nil
         isFinishedCalled = nil
-        receivedValue = nil
+        receivedValues = nil
 
         super.tearDown()
     }
@@ -50,7 +54,7 @@ final class KeyValueObservingTests: XCTestCase {
                 self?.isFinishedCalled = true
             }
         } receiveValue: { [weak self] value in
-            self?.receivedValue = value
+            self?.receivedValues?.append(value)
         }
         .store(in: &cancellables)
 
@@ -58,10 +62,36 @@ final class KeyValueObservingTests: XCTestCase {
         userInfo.name = "James Bond"
 
         XCTAssertFalse(isFinishedCalled) // Not yet finished, will keep receiving new KVO change
-        XCTAssertEqual(receivedValue, "James Bond") // Received latest KVO change
+        XCTAssertEqual(receivedValues, ["Manish", "James Bond"]) // Received latest KVO change
+    }
+
+    func testSwiftTypeKVOPublisher() {
+        let userDetail = UserDetail()
+        let publisher = userDetail.objectWillChange // emits the changed value before any of its @Published properties changes.
+
+        publisher.sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isFinishedCalled = true
+            }
+        } receiveValue: { [weak self] _ in
+            self?.receivedValues?.append(userDetail.name)
+        }
+        .store(in: &cancellables)
+
+        // KVO change
+        userDetail.name = "James Bond"
+        userDetail.name = "James Bond 2"
+
+        XCTAssertFalse(isFinishedCalled) // Not yet finished, will keep receiving new KVO change
+        XCTAssertEqual(receivedValues, ["Manish", "James Bond"]) // Received latest KVO change
     }
 }
 
 class UserInfo: NSObject {
     @objc dynamic var name: String = "Manish"
+}
+
+class UserDetail: ObservableObject {
+    @Published var name: String = "Manish"
 }
