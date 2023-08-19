@@ -8,24 +8,9 @@
 import UIKit
 import Combine
 
-class PokemonListViewController: UIViewController {
+class PokemonListViewController: PokemonBaseViewController {
     lazy var viewModel: PokemonListViewModelType = PokemonListViewModel()
-    lazy var cancellables: Set<AnyCancellable> = []
     lazy var pokemons: [Pokemon.ApiResponse.Result] = []
-
-    private enum Constants {
-        static let height: CGFloat = 116
-    }
-
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(PokemonTableViewCell.self)
-        tableView.separatorColor = .clear
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +24,9 @@ class PokemonListViewController: UIViewController {
         title = "Pokemon list"
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
+
+        tableView.delegate = self
+        tableView.dataSource = self
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -96,4 +84,11 @@ extension PokemonListViewController: UITableViewDataSource {
     }
 }
 
-extension PokemonListViewController: UITableViewDelegate {}
+extension PokemonListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pokemon = pokemons[indexPath.row]
+
+        let viewController = PokemonDetailViewController(pokemon: pokemon)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}

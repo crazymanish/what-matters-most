@@ -31,8 +31,12 @@ extension Pokemon.ApiResponse.Result {
         static let imageURLPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     }
 
+    var pokemonID: Int? { Int(url.lastPathComponent) }
+
+    var capitalizedName: String { name.capitalized }
+
     var imageURL: URL? {
-        guard let pokemonID = Int(url.lastPathComponent) else { return nil }
+        guard let pokemonID else { return nil }
 
         let imageURLString = Constants.imageURLPath + "\(pokemonID).png"
 

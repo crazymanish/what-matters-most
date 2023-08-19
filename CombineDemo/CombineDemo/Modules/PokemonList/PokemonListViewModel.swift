@@ -15,7 +15,6 @@ protocol PokemonListViewModelType: AnyObject {
     func fetchPokemons()
 }
 
-
 class PokemonListViewModel {
     lazy var apiClient: ApiClientType = ApiClient()
     lazy var cancellables: Set<AnyCancellable> = []
