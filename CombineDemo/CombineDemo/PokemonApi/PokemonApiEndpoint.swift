@@ -8,7 +8,7 @@
 import Foundation
 
 enum PokemonApiEndpoint: ApiEndpointType {
-    case getList
+    case getList(offset: Int, limit: Int)
     case getDetail(pokemonID: Int)
 
     var path: String {
@@ -17,6 +17,17 @@ enum PokemonApiEndpoint: ApiEndpointType {
             return "/api/v2/pokemon-species"
         case .getDetail(let pokemonID):
             return "/api/v2/pokemon-species/\(pokemonID)"
+        }
+    }
+
+    var queryParameters: [String : String]? {
+        switch self {
+        case .getList(let offset, let limit):
+            return [
+                "offset": "\(offset)",
+                "limit": "\(limit)"
+            ]
+        case .getDetail: return nil
         }
     }
 }

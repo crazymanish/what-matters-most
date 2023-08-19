@@ -63,7 +63,7 @@ class PokemonListViewController: UIViewController {
     }
 
     private func handleResponse(_ pokemons: [Pokemon.ApiResponse.Result]) {
-        self.pokemons = pokemons
+        self.pokemons += pokemons
 
         tableView.reloadData()
     }
@@ -87,6 +87,12 @@ extension PokemonListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.height
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.item+1 == pokemons.count { // Let's fetch more
+            viewModel.fetchPokemons()
+        }
     }
 }
 

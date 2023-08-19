@@ -20,9 +20,18 @@ class PokemonListViewModel {
     lazy var apiClient: ApiClientType = ApiClient()
     lazy var cancellables: Set<AnyCancellable> = []
 
-    var pokemonCount: Int = 0
+    let pageSize = 20
+    var currentPage = 0
+    var pokemonCount = 0
     @Published var pokemonResults: [Pokemon.ApiResponse.Result] = []
     @Published var apiError: ApiError?
+
+    var offset: Int { currentPage * pageSize }
+    var canFetchPokemons: Bool {
+        if currentPage == 0 { return true }
+
+        return offset+pageSize < pokemonCount
+    }
 }
 
 extension PokemonListViewModel: PokemonListViewModelType {
@@ -30,11 +39,14 @@ extension PokemonListViewModel: PokemonListViewModelType {
     var apiErrorPublisher: Published<ApiError?>.Publisher { $apiError }
 
     func fetchPokemons() {
-        let endpoint = PokemonApiEndpoint.getList
+        guard canFetchPokemons else { return }
+
+        let endpoint = PokemonApiEndpoint.getList(offset: offset, limit: pageSize)
 
         let successHandler: (Pokemon.ApiResponse) -> Void = { [weak self] in
-            self?.pokemonCount = $0.count
             self?.pokemonResults = $0.results
+            self?.pokemonCount = $0.count
+            self?.currentPage += 1
         }
 
         let errorHandler: (ApiError?) -> Void = { [weak self] in
