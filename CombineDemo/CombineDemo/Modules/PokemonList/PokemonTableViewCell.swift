@@ -53,6 +53,8 @@ class PokemonTableViewCell: UITableViewCell {
     }
 
     private func setupViews() {
+        backgroundColor = .systemBackground
+
         addSubview(pokemonImageView)
         addSubview(pokemonNameLabel)
 
@@ -67,15 +69,15 @@ class PokemonTableViewCell: UITableViewCell {
         ])
     }
 
-    func configure(for pokemon: Pokemon.ApiResponse.Result, backgroundColor: UIColor? = nil) {
-        self.backgroundColor = backgroundColor?.withAlphaComponent(0.1) ?? .systemBackground
+    func configure(for pokemon: Pokemon.ApiResponse.Result, pokemonColor: UIColor? = nil) {
+        pokemonImageView.backgroundColor = pokemonColor?.withAlphaComponent(0.1) ?? .systemBackground
         pokemonNameLabel.text = pokemon.capitalizedName
 
-        downloadImage(for: pokemon)
+        downloadImage(pokemon.imageURL)
     }
 
-    private func downloadImage(for pokemon: Pokemon.ApiResponse.Result) {
-        guard let imageURL = pokemon.imageURL else { return }
+    private func downloadImage(_ imageURL: URL?) {
+        guard let imageURL else { return }
 
         defer { imageLoader.loadImage(imageURL) }
 

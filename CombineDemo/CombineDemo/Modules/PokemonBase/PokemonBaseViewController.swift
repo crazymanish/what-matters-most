@@ -22,4 +22,8 @@ class PokemonBaseViewController: UIViewController {
         tableView.separatorColor = .clear
         return tableView
     }()
+
+    func handleError(_ apiError: ApiError?) {
+        // TODO: Show Error
+    }
 }

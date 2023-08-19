@@ -36,7 +36,7 @@ class PokemonDetailViewController: PokemonBaseViewController {
     }
 
     private func setupView() {
-        title = pokemon.capitalizedName + " evolution"
+        title = pokemon.capitalizedName + "'s evolution"
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
 
@@ -80,10 +80,6 @@ class PokemonDetailViewController: PokemonBaseViewController {
 
         self.tableView.reloadData()
     }
-
-    private func handleError(_ apiError: ApiError?) {
-        // TODO: Show Error
-    }
 }
 
 extension PokemonDetailViewController: UITableViewDataSource {
@@ -94,7 +90,7 @@ extension PokemonDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PokemonTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.selectionStyle = .none
-        cell.configure(for: evolvedPokemons[indexPath.row], backgroundColor: pokemonDetail?.color.uiColor)
+        cell.configure(for: evolvedPokemons[indexPath.row], pokemonColor: pokemonDetail?.color.uiColor)
         return cell
     }
 

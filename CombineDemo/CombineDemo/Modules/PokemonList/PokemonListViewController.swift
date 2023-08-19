@@ -55,10 +55,6 @@ class PokemonListViewController: PokemonBaseViewController {
 
         tableView.reloadData()
     }
-
-    private func handleError(_ apiError: ApiError?) {
-        // TODO: Show Error
-    }
 }
 
 extension PokemonListViewController: UITableViewDataSource {

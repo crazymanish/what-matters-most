@@ -12,14 +12,16 @@ enum PokemonApiEndpoint: ApiEndpointType {
     case getDetail(pokemonID: Int)
     case getEvolutionChain(chainID: Int)
 
+    var apiVersion: String { "/api/v2" }
+
     var path: String {
         switch self {
         case .getList:
-            return "/api/v2/pokemon-species"
+            return apiVersion + "/pokemon-species"
         case .getDetail(let pokemonID):
-            return "/api/v2/pokemon-species/\(pokemonID)"
+            return apiVersion + "/pokemon-species/\(pokemonID)"
         case .getEvolutionChain(let chainID):
-            return "/api/v2/evolution-chain/\(chainID)"
+            return apiVersion + "/evolution-chain/\(chainID)"
         }
     }
 
