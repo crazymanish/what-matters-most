@@ -5,6 +5,7 @@
 //  Created by Manish Rathi on 27/03/2023.
 //
 
+/*
 import SwiftUI
 
 @main
@@ -13,5 +14,25 @@ struct CombineDemoApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+}
+*/
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemGreen
+        self.window?.rootViewController = viewController
+
+        return true
     }
 }
