@@ -50,6 +50,11 @@
 		96604FF12A8FFC9200895B5A /* KeyValueObservingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96604FF02A8FFC9200895B5A /* KeyValueObservingTests.swift */; };
 		96604FF52A90B43E00895B5A /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96604FF32A90B43E00895B5A /* DefaultValue.swift */; };
 		96604FF62A90B43E00895B5A /* DefaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96604FF42A90B43E00895B5A /* DefaultError.swift */; };
+		9660507E2A90BE8B00895B5A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660507D2A90BE8B00895B5A /* ApiClient.swift */; };
+		966050802A90BEAF00895B5A /* ApiEndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660507F2A90BEAF00895B5A /* ApiEndpointType.swift */; };
+		966050822A90BED600895B5A /* ApiClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966050812A90BED600895B5A /* ApiClientType.swift */; };
+		966050842A90BFDC00895B5A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966050832A90BFDC00895B5A /* ApiError.swift */; };
+		966050972A90C71900895B5A /* JSONDecoder+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966050962A90C71900895B5A /* JSONDecoder+Shared.swift */; };
 		966784772A5B00AD00398D70 /* RemoveDuplicateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966784762A5B00AD00398D70 /* RemoveDuplicateTests.swift */; };
 		966784792A5B057F00398D70 /* CompactMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966784782A5B057F00398D70 /* CompactMapTests.swift */; };
 		9667847B2A5B09DC00398D70 /* IgnoreOutputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667847A2A5B09DC00398D70 /* IgnoreOutputTests.swift */; };
@@ -140,6 +145,11 @@
 		96604FF02A8FFC9200895B5A /* KeyValueObservingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueObservingTests.swift; sourceTree = "<group>"; };
 		96604FF32A90B43E00895B5A /* DefaultValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
 		96604FF42A90B43E00895B5A /* DefaultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultError.swift; sourceTree = "<group>"; };
+		9660507D2A90BE8B00895B5A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		9660507F2A90BEAF00895B5A /* ApiEndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpointType.swift; sourceTree = "<group>"; };
+		966050812A90BED600895B5A /* ApiClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientType.swift; sourceTree = "<group>"; };
+		966050832A90BFDC00895B5A /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		966050962A90C71900895B5A /* JSONDecoder+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Shared.swift"; sourceTree = "<group>"; };
 		966784762A5B00AD00398D70 /* RemoveDuplicateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDuplicateTests.swift; sourceTree = "<group>"; };
 		966784782A5B057F00398D70 /* CompactMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactMapTests.swift; sourceTree = "<group>"; };
 		9667847A2A5B09DC00398D70 /* IgnoreOutputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreOutputTests.swift; sourceTree = "<group>"; };
@@ -300,6 +310,7 @@
 		9642B74F29D2130500CB89C8 /* CombineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9660507C2A90BDDE00895B5A /* ApiClient */,
 				9660507B2A90BD7900895B5A /* AppLaunch */,
 				9642B75429D2130600CB89C8 /* Assets.xcassets */,
 				9642B75629D2130600CB89C8 /* CombineDemo.entitlements */,
@@ -420,6 +431,18 @@
 				9642B75229D2130500CB89C8 /* ContentView.swift */,
 			);
 			path = AppLaunch;
+			sourceTree = "<group>";
+		};
+		9660507C2A90BDDE00895B5A /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				966050812A90BED600895B5A /* ApiClientType.swift */,
+				9660507D2A90BE8B00895B5A /* ApiClient.swift */,
+				9660507F2A90BEAF00895B5A /* ApiEndpointType.swift */,
+				966050832A90BFDC00895B5A /* ApiError.swift */,
+				966050962A90C71900895B5A /* JSONDecoder+Shared.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		967AF3A72A485BF700AB60CA /* Subject */ = {
@@ -606,6 +629,11 @@
 			files = (
 				9642B75329D2130500CB89C8 /* ContentView.swift in Sources */,
 				9642B75129D2130500CB89C8 /* CombineDemoApp.swift in Sources */,
+				966050822A90BED600895B5A /* ApiClientType.swift in Sources */,
+				9660507E2A90BE8B00895B5A /* ApiClient.swift in Sources */,
+				966050972A90C71900895B5A /* JSONDecoder+Shared.swift in Sources */,
+				966050802A90BEAF00895B5A /* ApiEndpointType.swift in Sources */,
+				966050842A90BFDC00895B5A /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
