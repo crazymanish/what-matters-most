@@ -13,10 +13,15 @@ class PokemonListViewController: UIViewController {
     lazy var cancellables: Set<AnyCancellable> = []
     lazy var pokemons: [Pokemon.ApiResponse.Result] = []
 
+    private enum Constants {
+        static let height: CGFloat = 116
+    }
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.reuseIdentifier)
+        tableView.register(PokemonTableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.reuseIdentifier)
+        tableView.separatorColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -47,19 +52,24 @@ class PokemonListViewController: UIViewController {
         viewModel
             .pokemonResultsPublisher
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] pokemonResults in
-                self?.pokemons = pokemonResults
-                self?.tableView.reloadData()
-            }
+            .sink { [weak self] in self?.handleResponse($0) }
             .store(in: &cancellables)
 
         viewModel
             .apiErrorPublisher
             .receive(on: DispatchQueue.main)
-            .sink { error in
-                print(error as Any) // TODO: Show Error
-            }
+            .sink { [weak self] in self?.handleError($0) }
             .store(in: &cancellables)
+    }
+
+    private func handleResponse(_ pokemons: [Pokemon.ApiResponse.Result]) {
+        self.pokemons = pokemons
+
+        tableView.reloadData()
+    }
+
+    private func handleError(_ apiError: ApiError?) {
+        // TODO: Show Error
     }
 }
 
@@ -72,9 +82,15 @@ extension PokemonListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.reuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
 
-        let name = pokemons[indexPath.row].name
-        cell.textLabel?.text = name.capitalized
+        if let cell = cell as? PokemonTableViewCell {
+            cell.configure(for: pokemons[indexPath.row])
+        }
+
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.height
     }
 }
 
