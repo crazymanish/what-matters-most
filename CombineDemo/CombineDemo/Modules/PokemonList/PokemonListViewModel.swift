@@ -32,19 +32,27 @@ extension PokemonListViewModel: PokemonListViewModelType {
     func fetchPokemons() {
         let endpoint = PokemonApiEndpoint.getList
 
+        let successHandler: (Pokemon.ApiResponse) -> Void = { [weak self] in
+            self?.pokemonCount = $0.count
+            self?.pokemonResults = $0.results
+        }
+
+        let errorHandler: (ApiError?) -> Void = { [weak self] in
+            self?.apiError = $0
+        }
+
         apiClient
             .get(endpoint: endpoint)
-            .sink { [weak self] completion in
-                switch completion {
-                case .failure(let error):
-                    self?.apiError = error
-                case .finished:
-                    break
-                }
-            } receiveValue: { [weak self] (response: Pokemon.ApiResponse) in
-                self?.pokemonCount = response.count
-                self?.pokemonResults = response.results
-            }
+            .sink { errorHandler($0.error)
+            } receiveValue: { successHandler($0) }
             .store(in: &cancellables)
+    }
+}
+
+extension Subscribers.Completion<ApiError> {
+    var error: ApiError? {
+        guard case .failure(let error) = self else { return nil }
+
+        return error
     }
 }

@@ -25,3 +25,17 @@ extension Pokemon.ApiResponse {
 
 extension Pokemon.ApiResponse.Result: Equatable {}
 extension Pokemon.ApiResponse: Equatable {}
+
+extension Pokemon.ApiResponse.Result {
+    private enum Constants {
+        static let imageURLPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+    }
+
+    var imageURL: URL? {
+        guard let pokemonID = Int(url.lastPathComponent) else { return nil }
+
+        let imageURLString = Constants.imageURLPath + "\(pokemonID).png"
+
+        return URL(string: imageURLString)
+    }
+}

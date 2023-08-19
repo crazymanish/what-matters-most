@@ -20,7 +20,7 @@ class PokemonListViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(PokemonTableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.reuseIdentifier)
+        tableView.register(PokemonTableViewCell.self)
         tableView.separatorColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,13 +79,9 @@ extension PokemonListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.reuseIdentifier, for: indexPath)
+        let cell: PokemonTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.selectionStyle = .none
-
-        if let cell = cell as? PokemonTableViewCell {
-            cell.configure(for: pokemons[indexPath.row])
-        }
-
+        cell.configure(for: pokemons[indexPath.row])
         return cell
     }
 
