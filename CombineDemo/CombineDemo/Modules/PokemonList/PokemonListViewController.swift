@@ -13,22 +13,43 @@ class PokemonListViewController: UIViewController {
     lazy var cancellables: Set<AnyCancellable> = []
     lazy var pokemons: [Pokemon.ApiResponse.Result] = []
 
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.reuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Pokemon list"
-        view.backgroundColor = .systemBackground
 
-        setUpBindings()
+        setupView()
+        setupBindings()
         viewModel.fetchPokemons()
     }
 
-    private func setUpBindings() {
+    private func setupView() {
+        title = "Pokemon list"
+        view.backgroundColor = .systemBackground
+        view.addSubview(tableView)
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+    }
+
+    private func setupBindings() {
         viewModel
             .pokemonResultsPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] pokemonResults in
                 self?.pokemons = pokemonResults
-                // TODO: Reload TableView data
+                self?.tableView.reloadData()
             }
             .store(in: &cancellables)
 
@@ -41,3 +62,20 @@ class PokemonListViewController: UIViewController {
             .store(in: &cancellables)
     }
 }
+
+extension PokemonListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pokemons.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.reuseIdentifier, for: indexPath)
+        cell.selectionStyle = .none
+
+        let name = pokemons[indexPath.row].name
+        cell.textLabel?.text = name.capitalized
+        return cell
+    }
+}
+
+extension PokemonListViewController: UITableViewDelegate {}
