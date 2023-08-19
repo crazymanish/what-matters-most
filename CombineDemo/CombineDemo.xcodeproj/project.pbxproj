@@ -300,8 +300,7 @@
 		9642B74F29D2130500CB89C8 /* CombineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9642B75029D2130500CB89C8 /* CombineDemoApp.swift */,
-				9642B75229D2130500CB89C8 /* ContentView.swift */,
+				9660507B2A90BD7900895B5A /* AppLaunch */,
 				9642B75429D2130600CB89C8 /* Assets.xcassets */,
 				9642B75629D2130600CB89C8 /* CombineDemo.entitlements */,
 				9642B75729D2130600CB89C8 /* Preview Content */,
@@ -412,6 +411,15 @@
 				96604FF42A90B43E00895B5A /* DefaultError.swift */,
 			);
 			path = CustomPublishers;
+			sourceTree = "<group>";
+		};
+		9660507B2A90BD7900895B5A /* AppLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				9642B75029D2130500CB89C8 /* CombineDemoApp.swift */,
+				9642B75229D2130500CB89C8 /* ContentView.swift */,
+			);
+			path = AppLaunch;
 			sourceTree = "<group>";
 		};
 		967AF3A72A485BF700AB60CA /* Subject */ = {
