@@ -41,7 +41,7 @@ final class DebuggerBreakpointTests: XCTestCase {
 
         super.tearDown()
     }
-
+/*
     func testBreakpointOnErrorOperator() {
         let publisher = PassthroughSubject<String?, ApiError>()
 
@@ -86,5 +86,5 @@ final class DebuggerBreakpointTests: XCTestCase {
          - it will throw "error: Execution was interrupted, reason: signal SIGTRAP."
          - Also include stack trace information in Xcode's left-side debugger panel.
          */
-    }
+    } */
 }
