@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .systemGreen
-        self.window?.rootViewController = viewController
+        let viewController = PokemonListViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = navigationController
 
         return true
     }
