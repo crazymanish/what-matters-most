@@ -164,7 +164,7 @@
 #### Section4: Production code
 
 - [ ] Complete app
-    - [ ] Build app
+    - [x] Build app https://github.com/crazymanish/what-matters-most/pull/148
     - [ ] Unit testing
 
 --------------------------------------------
