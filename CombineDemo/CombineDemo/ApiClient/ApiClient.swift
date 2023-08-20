@@ -27,8 +27,7 @@ extension ApiClient: ApiClientType {
     func get<ApiModel: Decodable>(endpoint: ApiEndpointType) -> AnyPublisher<ApiModel, ApiError> {
         guard let apiRequest = endpoint.asURLRequest(baseURLString: baseURLString) else {
             let error = ApiError(failure: .invalidRequest)
-            return Fail(error: error)
-                .eraseToAnyPublisher()
+            return Fail(error: error).eraseToAnyPublisher()
         }
 
         return execute(request: apiRequest)
