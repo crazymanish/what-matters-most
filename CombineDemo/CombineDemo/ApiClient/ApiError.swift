@@ -8,7 +8,7 @@
 import Foundation
 
 struct ApiError {
-    let reason: Reason
+    let reason: ApiError.Reason
 }
 
 extension ApiError {

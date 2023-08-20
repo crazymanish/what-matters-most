@@ -82,7 +82,7 @@ class PokemonTableViewCell: UITableViewCell {
         defer { imageLoader.loadImage(imageURL) }
 
         imageLoader
-            .imageLoadingPublisher
+            .downloadedImagePublisher
             .assign(to: \.image, on: pokemonImageView)
             .store(in: &cancellables)
     }

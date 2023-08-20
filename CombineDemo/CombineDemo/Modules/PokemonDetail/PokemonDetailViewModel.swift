@@ -43,7 +43,7 @@ extension PokemonDetailViewModel: PokemonDetailViewModelType {
         }
 
         apiClient
-            .get(endpoint: endpoint)
+            .load(endpoint: endpoint)
             .sink { errorHandler($0.error)
             } receiveValue: { successHandler($0) }
             .store(in: &cancellables)
@@ -65,7 +65,7 @@ extension PokemonDetailViewModel: PokemonDetailViewModelType {
         }
 
         apiClient
-            .get(endpoint: endpoint)
+            .load(endpoint: endpoint)
             .sink { errorHandler($0.error)
             } receiveValue: { successHandler($0) }
             .store(in: &cancellables)

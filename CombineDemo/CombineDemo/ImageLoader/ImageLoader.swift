@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 protocol ImageLoading: AnyObject {
-    var imageLoadingPublisher: Published<UIImage?>.Publisher { get }
+    var downloadedImagePublisher: Published<UIImage?>.Publisher { get }
 
     func loadImage(_ imageURL: URL)
     func cancelImageLoading()
@@ -25,7 +25,7 @@ class ImageLoader {
 }
 
 extension ImageLoader: ImageLoading {
-    var imageLoadingPublisher: Published<UIImage?>.Publisher { $downloadedImage }
+    var downloadedImagePublisher: Published<UIImage?>.Publisher { $downloadedImage }
 
     func loadImage(_ imageURL: URL) {
         cancellable = urlSession

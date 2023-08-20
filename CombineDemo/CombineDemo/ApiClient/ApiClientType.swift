@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol ApiClientType {
-    func get<ApiModel: Decodable>(endpoint: ApiEndpointType) -> AnyPublisher<ApiModel, ApiError>
+    func load<ApiModel: Decodable>(endpoint: ApiEndpointType) -> AnyPublisher<ApiModel, ApiError>
 }

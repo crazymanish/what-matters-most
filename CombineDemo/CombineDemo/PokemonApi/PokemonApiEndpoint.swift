@@ -25,7 +25,7 @@ enum PokemonApiEndpoint: ApiEndpointType {
         }
     }
 
-    var queryParameters: [String : String]? {
+    var queryParameters: [String: String]? {
         switch self {
         case .getList(let offset, let limit):
             return [
