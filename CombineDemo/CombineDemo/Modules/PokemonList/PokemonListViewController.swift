@@ -17,6 +17,7 @@ class PokemonListViewController: PokemonBaseViewController {
 
         setupView()
         setupBindings()
+
         viewModel.fetchPokemons()
     }
 
@@ -74,7 +75,7 @@ extension PokemonListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.item+1 == pokemons.count { // Let's fetch more
+        if indexPath.item+1 == pokemons.count { // Let's catch more pokemons
             viewModel.fetchPokemons()
         }
     }

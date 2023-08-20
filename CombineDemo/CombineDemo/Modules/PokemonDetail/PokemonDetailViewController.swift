@@ -77,7 +77,7 @@ class PokemonDetailViewController: PokemonBaseViewController {
     private func handlePokemonEvolutionResponse(_ evolvedPokemons: [Pokemon.ApiResponse.Info]) {
         self.evolvedPokemons = evolvedPokemons
 
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }
 

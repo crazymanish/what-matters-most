@@ -61,13 +61,13 @@ extension ApiClient: ApiClientType {
 
 private extension URLResponse {
     func validate() throws {
-        let httpResponse = self as? HTTPURLResponse
+        let httpURLResponse = self as? HTTPURLResponse
 
-        guard let httpResponse else {
+        guard let httpURLResponse else {
             throw ApiError(failure: .invalidResponse)
         }
 
-        let statusCode = httpResponse.statusCode
+        let statusCode = httpURLResponse.statusCode
 
         guard (200...299).contains(statusCode) else {
             throw ApiError(failure: .invalidStatus(code: statusCode))

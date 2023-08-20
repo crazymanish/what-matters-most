@@ -470,7 +470,6 @@
 				9660507D2A90BE8B00895B5A /* ApiClient.swift */,
 				9660507F2A90BEAF00895B5A /* ApiEndpointType.swift */,
 				966050832A90BFDC00895B5A /* ApiError.swift */,
-				966050962A90C71900895B5A /* JSONDecoder+Shared.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -525,6 +524,7 @@
 		966050D02A9135AE00895B5A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				966050962A90C71900895B5A /* JSONDecoder+Shared.swift */,
 				966050D12A9135EC00895B5A /* Reusable+Identifier.swift */,
 				966050D32A91362A00895B5A /* UITableView+DeQueue.swift */,
 			);
