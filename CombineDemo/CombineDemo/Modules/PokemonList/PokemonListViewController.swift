@@ -39,13 +39,13 @@ class PokemonListViewController: PokemonBaseViewController {
     private func setupBindings() {
         viewModel
             .pokemonResultsPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: mainQueue)
             .sink { [weak self] in self?.handleResponse($0) }
             .store(in: &cancellables)
 
         viewModel
             .apiErrorPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: mainQueue)
             .sink { [weak self] in self?.handleError($0) }
             .store(in: &cancellables)
     }
@@ -82,9 +82,9 @@ extension PokemonListViewController: UITableViewDataSource {
 
 extension PokemonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pokemon = pokemons[indexPath.row]
+        let selectedPokemon = pokemons[indexPath.row]
 
-        let viewController = PokemonDetailViewController(pokemon: pokemon)
+        let viewController = PokemonDetailViewController(selectedPokemon: selectedPokemon)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

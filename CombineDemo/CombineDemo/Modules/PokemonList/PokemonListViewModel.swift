@@ -26,9 +26,9 @@ class PokemonListViewModel {
     @Published var apiError: ApiError?
 
     var offset: Int { currentPage * pageSize }
+
     var canFetchPokemons: Bool {
         if currentPage == 0 { return true }
-
         return offset+pageSize < pokemonCount
     }
 }
@@ -63,7 +63,6 @@ extension PokemonListViewModel: PokemonListViewModelType {
 extension Subscribers.Completion<ApiError> {
     var error: ApiError? {
         guard case .failure(let error) = self else { return nil }
-
         return error
     }
 }

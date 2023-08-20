@@ -10,6 +10,7 @@ import Combine
 
 class PokemonBaseViewController: UIViewController {
     lazy var cancellables: Set<AnyCancellable> = []
+    lazy var mainQueue = DispatchQueue.main
 
     enum Constants {
         static let height: CGFloat = 116

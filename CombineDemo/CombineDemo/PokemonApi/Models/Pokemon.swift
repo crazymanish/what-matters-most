@@ -39,7 +39,6 @@ extension Pokemon.ApiResponse.Result {
         guard let pokemonID else { return nil }
 
         let imageURLString = Constants.imageURLPath + "\(pokemonID).png"
-
         return URL(string: imageURLString)
     }
 }

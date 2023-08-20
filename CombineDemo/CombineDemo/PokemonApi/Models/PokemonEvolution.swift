@@ -33,7 +33,6 @@ extension PokemonEvolution.ApiResponse: Equatable {}
 extension PokemonEvolution.ApiResponse.Chain {
     var canEvolve: Bool {
         guard let evolvesTo else { return false }
-
         return evolvesTo.count > 0
     }
 }

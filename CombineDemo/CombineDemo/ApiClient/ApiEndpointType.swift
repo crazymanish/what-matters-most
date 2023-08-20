@@ -39,19 +39,16 @@ extension ApiEndpointType {
         urlRequest.httpMethod = httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = headers
         urlRequest.httpBody = httpBody
-
         return urlRequest
     }
 
     private var queryItems: [URLQueryItem] {
         guard let queryParameters else { return [] }
-
         return queryParameters.map { URLQueryItem(name: $0, value: $1) }
     }
 
     private var httpBody: Data? {
         guard let bodyParameters else { return nil }
-
         return try? JSONSerialization.data(withJSONObject: bodyParameters)
     }
 }

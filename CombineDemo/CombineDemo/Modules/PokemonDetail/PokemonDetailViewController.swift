@@ -13,10 +13,10 @@ class PokemonDetailViewController: PokemonBaseViewController {
     lazy var evolvedPokemons: [Pokemon.ApiResponse.Result] = []
     var pokemonDetail: PokemonDetail.ApiResponse?
 
-    let pokemon: Pokemon.ApiResponse.Result
+    let selectedPokemon: Pokemon.ApiResponse.Result
 
-    init(pokemon: Pokemon.ApiResponse.Result) {
-        self.pokemon = pokemon
+    init(selectedPokemon: Pokemon.ApiResponse.Result) {
+        self.selectedPokemon = selectedPokemon
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,13 +30,12 @@ class PokemonDetailViewController: PokemonBaseViewController {
         setupView()
         setupBindings()
 
-        guard let pokemonID = pokemon.pokemonID else { return }
-
+        guard let pokemonID = selectedPokemon.pokemonID else { return }
         viewModel.fetchPokemonDetail(pokemonID: pokemonID)
     }
 
     private func setupView() {
-        title = pokemon.capitalizedName + "'s evolution"
+        title = selectedPokemon.capitalizedName + "'s evolution"
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
 
@@ -54,19 +53,19 @@ class PokemonDetailViewController: PokemonBaseViewController {
     private func setupBindings() {
         viewModel
             .pokemonDetailPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: mainQueue)
             .sink {[weak self] in self?.handlePokemonDetailResponse($0) }
             .store(in: &cancellables)
 
         viewModel
             .evolvedPokemonsPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: mainQueue)
             .sink {[weak self] in self?.handlePokemonEvolutionResponse($0) }
             .store(in: &cancellables)
 
         viewModel
             .apiErrorPublisher
-            .receive(on: DispatchQueue.main)
+            .receive(on: mainQueue)
             .sink { [weak self] in self?.handleError($0) }
             .store(in: &cancellables)
     }
