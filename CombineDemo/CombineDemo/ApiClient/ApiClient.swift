@@ -26,7 +26,7 @@ class ApiClient {
 extension ApiClient: ApiClientType {
     func get<ApiModel: Decodable>(endpoint: ApiEndpointType) -> AnyPublisher<ApiModel, ApiError> {
         guard let apiRequest = endpoint.asURLRequest(baseURLString: baseURLString) else {
-            let error = ApiError(failure: .invalidRequest)
+            let error = ApiError(reason: .invalidRequest)
             return Fail(error: error).eraseToAnyPublisher()
         }
 
@@ -50,11 +50,11 @@ extension ApiClient: ApiClientType {
 
         switch error {
         case is DecodingError:
-            return ApiError(failure: .decodingError(description: description))
+            return ApiError(reason: .decodingError(description: description))
         case let error as ApiError:
             return error
         default:
-            return ApiError(failure: .unknownError(description: description))
+            return ApiError(reason: .unknownError(description: description))
         }
     }
 }
@@ -64,13 +64,13 @@ private extension URLResponse {
         let httpURLResponse = self as? HTTPURLResponse
 
         guard let httpURLResponse else {
-            throw ApiError(failure: .invalidResponse)
+            throw ApiError(reason: .invalidResponse)
         }
 
         let statusCode = httpURLResponse.statusCode
 
         guard (200...299).contains(statusCode) else {
-            throw ApiError(failure: .invalidStatus(code: statusCode))
+            throw ApiError(reason: .invalidStatus(code: statusCode))
         }
     }
 }

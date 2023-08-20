@@ -8,11 +8,11 @@
 import Foundation
 
 struct ApiError {
-    let failure: Failure
+    let reason: Reason
 }
 
 extension ApiError {
-    enum Failure {
+    enum Reason {
         case invalidRequest
         case invalidResponse
         case invalidStatus(code: Int)
@@ -22,4 +22,4 @@ extension ApiError {
 }
 
 extension ApiError: Error {}
-extension ApiError.Failure: Equatable {}
+extension ApiError.Reason: Equatable {}
