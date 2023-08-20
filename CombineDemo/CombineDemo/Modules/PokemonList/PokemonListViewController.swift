@@ -10,7 +10,7 @@ import Combine
 
 class PokemonListViewController: PokemonBaseViewController {
     lazy var viewModel: PokemonListViewModelType = PokemonListViewModel()
-    lazy var pokemons: [Pokemon.ApiResponse.Result] = []
+    lazy var pokemons: [Pokemon.ApiResponse.Info] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class PokemonListViewController: PokemonBaseViewController {
 
     private func setupBindings() {
         viewModel
-            .pokemonResultsPublisher
+            .pokemonsPublisher
             .receive(on: mainQueue)
             .sink { [weak self] in self?.handleResponse($0) }
             .store(in: &cancellables)
@@ -50,7 +50,7 @@ class PokemonListViewController: PokemonBaseViewController {
             .store(in: &cancellables)
     }
 
-    private func handleResponse(_ pokemons: [Pokemon.ApiResponse.Result]) {
+    private func handleResponse(_ pokemons: [Pokemon.ApiResponse.Info]) {
         self.pokemons += pokemons
 
         tableView.reloadData()

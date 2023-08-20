@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol PokemonListViewModelType: AnyObject {
-    var pokemonResultsPublisher: Published<[Pokemon.ApiResponse.Result]>.Publisher { get }
+    var pokemonsPublisher: Published<[Pokemon.ApiResponse.Info]>.Publisher { get }
     var apiErrorPublisher: Published<ApiError?>.Publisher { get }
 
     func fetchPokemons()
@@ -21,20 +21,20 @@ class PokemonListViewModel {
 
     let pageSize = 20
     var currentPage = 0
-    var pokemonCount = 0
-    @Published var pokemonResults: [Pokemon.ApiResponse.Result] = []
+    var allPokemonsCount = 0
+    @Published var pokemons: [Pokemon.ApiResponse.Info] = []
     @Published var apiError: ApiError?
 
     var offset: Int { currentPage * pageSize }
 
     var canFetchPokemons: Bool {
         if currentPage == 0 { return true }
-        return offset+pageSize < pokemonCount
+        return offset+pageSize < allPokemonsCount
     }
 }
 
 extension PokemonListViewModel: PokemonListViewModelType {
-    var pokemonResultsPublisher: Published<[Pokemon.ApiResponse.Result]>.Publisher { $pokemonResults }
+    var pokemonsPublisher: Published<[Pokemon.ApiResponse.Info]>.Publisher { $pokemons }
     var apiErrorPublisher: Published<ApiError?>.Publisher { $apiError }
 
     func fetchPokemons() {
@@ -43,8 +43,8 @@ extension PokemonListViewModel: PokemonListViewModelType {
         let endpoint = PokemonApiEndpoint.getList(offset: offset, limit: pageSize)
 
         let successHandler: (Pokemon.ApiResponse) -> Void = { [weak self] in
-            self?.pokemonResults = $0.results
-            self?.pokemonCount = $0.count
+            self?.pokemons = $0.pokemons
+            self?.allPokemonsCount = $0.count
             self?.currentPage += 1
         }
 

@@ -10,12 +10,12 @@ import Combine
 
 class PokemonDetailViewController: PokemonBaseViewController {
     lazy var viewModel: PokemonDetailViewModelType = PokemonDetailViewModel()
-    lazy var evolvedPokemons: [Pokemon.ApiResponse.Result] = []
+    lazy var evolvedPokemons: [Pokemon.ApiResponse.Info] = []
     var pokemonDetail: PokemonDetail.ApiResponse?
 
-    let selectedPokemon: Pokemon.ApiResponse.Result
+    let selectedPokemon: Pokemon.ApiResponse.Info
 
-    init(selectedPokemon: Pokemon.ApiResponse.Result) {
+    init(selectedPokemon: Pokemon.ApiResponse.Info) {
         self.selectedPokemon = selectedPokemon
         super.init(nibName: nil, bundle: nil)
     }
@@ -74,7 +74,7 @@ class PokemonDetailViewController: PokemonBaseViewController {
         self.pokemonDetail = pokemonDetail
     }
 
-    private func handlePokemonEvolutionResponse(_ evolvedPokemons: [Pokemon.ApiResponse.Result]) {
+    private func handlePokemonEvolutionResponse(_ evolvedPokemons: [Pokemon.ApiResponse.Info]) {
         self.evolvedPokemons = evolvedPokemons
 
         self.tableView.reloadData()

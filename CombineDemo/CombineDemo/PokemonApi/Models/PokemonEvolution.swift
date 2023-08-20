@@ -17,7 +17,7 @@ extension PokemonEvolution {
 
 extension PokemonEvolution.ApiResponse {
     struct Chain: Decodable {
-        let pokemon: Pokemon.ApiResponse.Result
+        let pokemon: Pokemon.ApiResponse.Info
         var evolvesTo: [PokemonEvolution.ApiResponse.Chain]?
 
         enum CodingKeys: String, CodingKey {

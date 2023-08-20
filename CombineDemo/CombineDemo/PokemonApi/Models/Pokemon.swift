@@ -12,28 +12,33 @@ enum Pokemon {}
 extension Pokemon {
     struct ApiResponse: Decodable {
         let count: Int
-        let results: [Pokemon.ApiResponse.Result]
+        let pokemons: [Pokemon.ApiResponse.Info]
+
+        enum CodingKeys: String, CodingKey {
+            case count
+            case pokemons = "results"
+        }
     }
 }
 
 extension Pokemon.ApiResponse {
-    struct Result: Decodable {
+    struct Info: Decodable {
         let name: String
         let url: URL
     }
 }
 
-extension Pokemon.ApiResponse.Result: Equatable {}
+extension Pokemon.ApiResponse.Info: Equatable {}
 extension Pokemon.ApiResponse: Equatable {}
 
-extension Pokemon.ApiResponse.Result {
+extension Pokemon.ApiResponse.Info {
     private enum Constants {
         static let imageURLPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
     }
 
-    var pokemonID: Int? { Int(url.lastPathComponent) }
-
     var capitalizedName: String { name.capitalized }
+
+    var pokemonID: Int? { Int(url.lastPathComponent) }
 
     var imageURL: URL? {
         guard let pokemonID else { return nil }

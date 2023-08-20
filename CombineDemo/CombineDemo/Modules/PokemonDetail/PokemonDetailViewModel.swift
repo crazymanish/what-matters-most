@@ -10,7 +10,7 @@ import Combine
 
 protocol PokemonDetailViewModelType: AnyObject {
     var pokemonDetailPublisher: Published<PokemonDetail.ApiResponse?>.Publisher { get }
-    var evolvedPokemonsPublisher: Published<[Pokemon.ApiResponse.Result]>.Publisher { get }
+    var evolvedPokemonsPublisher: Published<[Pokemon.ApiResponse.Info]>.Publisher { get }
     var apiErrorPublisher: Published<ApiError?>.Publisher { get }
 
     func fetchPokemonDetail(pokemonID: Int)
@@ -21,13 +21,13 @@ class PokemonDetailViewModel {
     lazy var cancellables: Set<AnyCancellable> = []
 
     @Published var pokemonDetail: PokemonDetail.ApiResponse?
-    @Published var evolvedPokemons: [Pokemon.ApiResponse.Result] = []
+    @Published var evolvedPokemons: [Pokemon.ApiResponse.Info] = []
     @Published var apiError: ApiError?
 }
 
 extension PokemonDetailViewModel: PokemonDetailViewModelType {
     var pokemonDetailPublisher: Published<PokemonDetail.ApiResponse?>.Publisher { $pokemonDetail }
-    var evolvedPokemonsPublisher: Published<[Pokemon.ApiResponse.Result]>.Publisher { $evolvedPokemons }
+    var evolvedPokemonsPublisher: Published<[Pokemon.ApiResponse.Info]>.Publisher { $evolvedPokemons }
     var apiErrorPublisher: Published<ApiError?>.Publisher { $apiError }
 
     func fetchPokemonDetail(pokemonID: Int) {
@@ -71,10 +71,10 @@ extension PokemonDetailViewModel: PokemonDetailViewModelType {
             .store(in: &cancellables)
     }
 
-    private func flattenEvolutionChain(_ chain: PokemonEvolution.ApiResponse.Chain?) -> [Pokemon.ApiResponse.Result] {
+    private func flattenEvolutionChain(_ chain: PokemonEvolution.ApiResponse.Chain?) -> [Pokemon.ApiResponse.Info] {
         guard let chain else { return [] }
         guard chain.canEvolve else { return [chain.pokemon] }
 
-        return [chain.pokemon] + flattenEvolutionChain(chain.evolvesTo?[0]) // Considering: Only One evolves-into...
+        return [chain.pokemon] + flattenEvolutionChain(chain.evolvesTo?[0]) // Considering: Only 1 evolves-into...
     }
 }

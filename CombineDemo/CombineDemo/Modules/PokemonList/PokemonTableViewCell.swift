@@ -69,11 +69,11 @@ class PokemonTableViewCell: UITableViewCell {
         ])
     }
 
-    func configure(for pokemon: Pokemon.ApiResponse.Result, pokemonColor: UIColor? = nil) {
-        pokemonImageView.backgroundColor = pokemonColor?.withAlphaComponent(0.1) ?? .systemBackground
-        pokemonNameLabel.text = pokemon.capitalizedName
-
+    func configure(for pokemon: Pokemon.ApiResponse.Info, pokemonColor: UIColor? = nil) {
         downloadImage(pokemon.imageURL)
+
+        pokemonNameLabel.text = pokemon.capitalizedName
+        pokemonImageView.backgroundColor = pokemonColor?.withAlphaComponent(0.1) ?? .systemBackground
     }
 
     private func downloadImage(_ imageURL: URL?) {
