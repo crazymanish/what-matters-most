@@ -22,4 +22,5 @@ extension ApiError {
 }
 
 extension ApiError: Error {}
+extension ApiError: Equatable {}
 extension ApiError.Reason: Equatable {}

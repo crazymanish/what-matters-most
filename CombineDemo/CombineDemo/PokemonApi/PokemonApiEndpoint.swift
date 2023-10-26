@@ -36,3 +36,5 @@ enum PokemonApiEndpoint: ApiEndpointType {
         }
     }
 }
+
+extension PokemonApiEndpoint: Equatable {}

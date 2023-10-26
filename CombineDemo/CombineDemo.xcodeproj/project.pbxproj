@@ -91,6 +91,10 @@
 		96DACA652A640249004404AE /* ThrottleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA642A640249004404AE /* ThrottleTests.swift */; };
 		96DACA672A640D37004404AE /* TimeoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA662A640D37004404AE /* TimeoutTests.swift */; };
 		96DACA692A64190F004404AE /* MeasureTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DACA682A64190F004404AE /* MeasureTimeTests.swift */; };
+		96F077972AE96B1700623A3B /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F077962AE96B1700623A3B /* PokemonListViewModelTests.swift */; };
+		96F0779A2AE96B9500623A3B /* ApiClientTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F077992AE96B9500623A3B /* ApiClientTypeMock.swift */; };
+		96F077C82AE9848B00623A3B /* PokemonList.json in Resources */ = {isa = PBXBuildFile; fileRef = 96F077C72AE9848B00623A3B /* PokemonList.json */; };
+		96F077CA2AE9879A00623A3B /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F077C92AE9879A00623A3B /* JSONLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +203,11 @@
 		96DACA642A640249004404AE /* ThrottleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleTests.swift; sourceTree = "<group>"; };
 		96DACA662A640D37004404AE /* TimeoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTests.swift; sourceTree = "<group>"; };
 		96DACA682A64190F004404AE /* MeasureTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTimeTests.swift; sourceTree = "<group>"; };
+		96F077962AE96B1700623A3B /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
+		96F077992AE96B9500623A3B /* ApiClientTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTypeMock.swift; sourceTree = "<group>"; };
+		96F077C72AE9848B00623A3B /* PokemonList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokemonList.json; sourceTree = "<group>"; };
+		96F077C92AE9879A00623A3B /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		96F077CB2AEA3C6500623A3B /* CombineDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CombineDemo.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +325,7 @@
 		9642B74429D2130500CB89C8 = {
 			isa = PBXGroup;
 			children = (
+				96F077CB2AEA3C6500623A3B /* CombineDemo.xctestplan */,
 				9642B74F29D2130500CB89C8 /* CombineDemo */,
 				9642B76129D2130600CB89C8 /* CombineDemoTests */,
 				9642B76B29D2130600CB89C8 /* CombineDemoUITests */,
@@ -360,6 +370,8 @@
 		9642B76129D2130600CB89C8 /* CombineDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				96F077982AE96B7200623A3B /* ApiClient */,
+				96F077942AE96AE700623A3B /* Modules */,
 				9609A73B2A891AF500383991 /* Debugging */,
 				965D33CB2A8D451C00554D1D /* ErrorHandling */,
 				96604FEF2A8FFC6E00895B5A /* KeyValueObserving */,
@@ -600,6 +612,32 @@
 			path = TimeManipulationOperators;
 			sourceTree = "<group>";
 		};
+		96F077942AE96AE700623A3B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				96F077952AE96AFB00623A3B /* PokemonList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		96F077952AE96AFB00623A3B /* PokemonList */ = {
+			isa = PBXGroup;
+			children = (
+				96F077962AE96B1700623A3B /* PokemonListViewModelTests.swift */,
+				96F077C72AE9848B00623A3B /* PokemonList.json */,
+			);
+			path = PokemonList;
+			sourceTree = "<group>";
+		};
+		96F077982AE96B7200623A3B /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				96F077992AE96B9500623A3B /* ApiClientTypeMock.swift */,
+				96F077C92AE9879A00623A3B /* JSONLoader.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,6 +751,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F077C82AE9848B00623A3B /* PokemonList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +799,7 @@
 				96321F052A5AA32200C60D8A /* CollectTests.swift in Sources */,
 				9609A73D2A891B1700383991 /* PrintingEventsTests.swift in Sources */,
 				967AF4B92A526E0600AB60CA /* CurrentValueSubjectTests.swift in Sources */,
+				96F0779A2AE96B9500623A3B /* ApiClientTypeMock.swift in Sources */,
 				9667847B2A5B09DC00398D70 /* IgnoreOutputTests.swift in Sources */,
 				96DACA672A640D37004404AE /* TimeoutTests.swift in Sources */,
 				9612D6B22A5AD0F9007CBD1A /* ScanTests.swift in Sources */,
@@ -776,6 +816,7 @@
 				967AF3A92A485C3100AB60CA /* PassthroughSubjectTests.swift in Sources */,
 				965D33E32A8E36C700554D1D /* SchedulerTests.swift in Sources */,
 				9631D2C629DEA8A200A9D790 /* AssignTests.swift in Sources */,
+				96F077CA2AE9879A00623A3B /* JSONLoader.swift in Sources */,
 				9631D29C29DA736200A9D790 /* NotificationTests.swift in Sources */,
 				96AC4A462A60081500B2042E /* CombineLatestTests.swift in Sources */,
 				9631D2EA29E657D500A9D790 /* IntSubscriberTests.swift in Sources */,
@@ -807,6 +848,7 @@
 				9612D6B02A5ACE06007CBD1A /* ReplaceEmptyTests.swift in Sources */,
 				9609A73F2A8923E800383991 /* HandlingEventsTests.swift in Sources */,
 				96DACA652A640249004404AE /* ThrottleTests.swift in Sources */,
+				96F077972AE96B1700623A3B /* PokemonListViewModelTests.swift in Sources */,
 				965D33CD2A8D454400554D1D /* NeverTests.swift in Sources */,
 				9642B7A729D369A600CB89C8 /* ApiError.swift in Sources */,
 				96DACA5F2A630C5E004404AE /* ShiftingTimeTests.swift in Sources */,
